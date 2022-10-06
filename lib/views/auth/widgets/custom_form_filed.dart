@@ -20,7 +20,7 @@ class CustomTextFiled extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(bottom: 15),
+      margin: EdgeInsets.all(15),
       child: TextFormField(
         validator: validator,
         controller: controller,

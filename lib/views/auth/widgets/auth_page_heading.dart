@@ -1,3 +1,5 @@
+import 'package:figma_squircle/figma_squircle.dart';
+import 'package:real_state_mangament/core/Constrant/AppBorderRaduis.dart';
 import 'package:real_state_mangament/core/Constrant/AppColors.dart';
 import 'package:flutter/material.dart';
 
@@ -14,17 +16,21 @@ class AuthPageHeading extends StatelessWidget {
         margin: EdgeInsets.all(20),
         child: Column(
           children: [
-            Text(head!, style: Theme.of(context).textTheme.headline4),
-            Center(
-              child: Text(
-                description!,
+            Text(head!,
                 style: Theme.of(context)
                     .textTheme
-                    .bodySmall!
-                    .copyWith(color: AppColor.grey),
-                textAlign: TextAlign.center,
-              ),
-            )
+                    .headline4!
+                    .copyWith(color: Colors.white)),
+            // Center(
+            //   child: Text(
+            //     description!,
+            //     style: Theme.of(context)
+            //         .textTheme
+            //         .bodySmall!
+            //         .copyWith(color: AppColor.grey),
+            //     textAlign: TextAlign.center,
+            //   ),
+            // )
           ],
         ));
   }

@@ -1,4 +1,5 @@
 // import 'mate'
+import 'package:figma_squircle/figma_squircle.dart';
 import 'package:real_state_mangament/controllers/auth/login_controller.dart';
 import 'package:real_state_mangament/core/Constrant/AppColors.dart';
 import 'package:real_state_mangament/core/Constrant/AppSvgImg.dart';
@@ -36,14 +37,31 @@ class Login extends StatelessWidget {
               children: [
                 // Page Headding
                 Container(
-                  color: AppColor.primaryColor,
+                  decoration: const ShapeDecoration(
+                    color: AppColor.primaryColor,
+                    shape: SmoothRectangleBorder(
+                      borderRadius: SmoothBorderRadius.only(
+                        bottomLeft: SmoothRadius(
+                          cornerRadius: 50,
+                          cornerSmoothing: .1,
+                        ),
+                        bottomRight: SmoothRadius(
+                          cornerRadius: 50,
+                          cornerSmoothing: 1.4,
+                        ),
+                      ),
+                    ),
+                  ),
                   child: AuthPageHeading(
                       head: 'Wellcome Back',
                       description:
                           'is important to document a parent’s attendance using a sign-in sheet as it provides proof of'),
                 ),
+                SizedBox(
+                  height: 30,
+                ),
                 Container(
-                  height: MediaQuery.of(context).size.height * .60,
+                  // height: MediaQuery.of(context).size.height * .60,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
