@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:real_state_mangament/core/Constrant/AppColors.dart';
 
 // const BarWithNowBackArrow({Key? key}) : super(key: key);
 
@@ -9,9 +10,12 @@ AppBar BarWithNowBackArrow(context, String title) {
       centerTitle: true,
       title: Text(
         title,
-        style: Theme.of(context).textTheme.titleLarge,
+        style: Theme.of(context)
+            .textTheme
+            .titleLarge!
+            .copyWith(color: Colors.white),
       ),
-      backgroundColor: Colors.white,
+      backgroundColor: AppColor.primaryColor,
       elevation: 0);
 }
 

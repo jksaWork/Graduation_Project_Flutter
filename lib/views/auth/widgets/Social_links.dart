@@ -15,6 +15,7 @@ class SocialLinks extends StatelessWidget {
   Container socialLinks() {
     List svgIcons = [AppSvgImg.facebook, AppSvgImg.google, AppSvgImg.tweiter];
     return Container(
+      color: Colors.red,
       margin: EdgeInsets.symmetric(horizontal: 30),
       child: Column(
         children: [

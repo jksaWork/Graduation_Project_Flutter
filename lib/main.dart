@@ -1,3 +1,4 @@
+import 'package:real_state_mangament/core/Services/api.dart';
 import 'package:real_state_mangament/core/Services/my_services.dart';
 import 'package:real_state_mangament/core/Translations/localizationController.dart';
 import 'package:real_state_mangament/core/Translations/translation.dart';
@@ -11,7 +12,7 @@ import 'package:get/get.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await initMyService();
-  // await Ap
+  Api.initilzieIntercepters();
   runApp(const MyApp());
 }
 
@@ -31,6 +32,7 @@ class MyApp extends StatelessWidget {
           fontFamily: 'Cairo',
           primarySwatch: Colors.blue,
           textTheme: TextTheme(
+              // titleLarge: TextStyle(color: Colors.white),
               // titleMedium: TextStyle(color: Colors.black),
               headline4:
                   TextStyle(fontWeight: FontWeight.bold, color: Colors.black))),

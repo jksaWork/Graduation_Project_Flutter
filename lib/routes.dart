@@ -1,4 +1,5 @@
 import 'package:real_state_mangament/Middlewares/onbarding_middleware.dart';
+import 'package:real_state_mangament/views/Home/Home.dart';
 import 'package:real_state_mangament/views/OnBoarding/OnBoarding.dart';
 import 'package:real_state_mangament/views/auth/Opt.dart';
 import 'package:real_state_mangament/views/auth/forget_password.dart';
@@ -19,4 +20,5 @@ List<GetPage<dynamic>>? routes = [
       name: CompletedProfile.routeName, page: () => const CompletedProfile()),
   GetPage(name: LogginSuccess.routeName, page: () => const LogginSuccess()),
   GetPage(name: ForgetPassword.routeName, page: () => const ForgetPassword()),
+  GetPage(name: Home.routeName, page: () => const Home()),
 ];

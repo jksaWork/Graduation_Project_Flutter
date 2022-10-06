@@ -19,28 +19,31 @@ class LoginFrom extends StatelessWidget {
   Container LoginFormFiled() {
     LoginController controller = Get.find();
     return Container(
+      // height: MediaQuery.of(context).size.height * .60,
       margin: EdgeInsets.symmetric(vertical: 20, horizontal: 20),
       child: Form(
         key: controller.loginKey,
-        child: Column(children: [
-          CustomTextFiled(
-            validator: (val) => validInput(val!, 8, 30, 'Email'),
-            title: 'Emial',
-            prefiexIcon: AppSvgImg.mail,
-            controller: controller.email,
-          ),
-          CustomTextFiled(
-              validator: (val) => validInput(val!, 8, 30, 'Password'),
-              title: 'Password',
-              prefiexIcon: AppSvgImg.Lock,
-              controller: controller.password),
-          ForgetPasswordWidget(),
-          ContinueButton(
-            press: () {
-              controller.login();
-            },
-          ),
-        ]),
+        child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              CustomTextFiled(
+                validator: (val) => validInput(val!, 8, 30, 'Email'),
+                title: 'Emial',
+                prefiexIcon: AppSvgImg.mail,
+                controller: controller.email,
+              ),
+              CustomTextFiled(
+                  validator: (val) => validInput(val!, 6, 30, 'Password'),
+                  title: 'Password',
+                  prefiexIcon: AppSvgImg.Lock,
+                  controller: controller.password),
+              ForgetPasswordWidget(),
+              ContinueButton(
+                press: () {
+                  controller.login();
+                },
+              ),
+            ]),
       ),
     );
   }

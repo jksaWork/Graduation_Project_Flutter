@@ -27,19 +27,34 @@ class Login extends StatelessWidget {
       body: WillPopScope(
         onWillPop: appColseAlert,
         child: Container(
-          color: Colors.white,
-          padding: EdgeInsets.all(10),
-          child: ListView(
-            children: [
-              // Page Headding
-              AuthPageHeading(
-                  head: 'Wellcome Back',
-                  description:
-                      'is important to document a parent’s attendance using a sign-in sheet as it provides proof of'),
-              LoginFrom(),
-              // Socilal Links
-              SocialLinks(),
-            ],
+          // color: Colors.white,
+          color: AppColor.primaryColor,
+          child: Container(
+            color: Colors.white,
+            // padding: EdgeInsets.all(10),
+            child: ListView(
+              children: [
+                // Page Headding
+                Container(
+                  color: AppColor.primaryColor,
+                  child: AuthPageHeading(
+                      head: 'Wellcome Back',
+                      description:
+                          'is important to document a parent’s attendance using a sign-in sheet as it provides proof of'),
+                ),
+                Container(
+                  height: MediaQuery.of(context).size.height * .60,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      LoginFrom(),
+                      // Socilal Links
+                      SocialLinks(),
+                    ],
+                  ),
+                )
+              ],
+            ),
           ),
         ),
       ),

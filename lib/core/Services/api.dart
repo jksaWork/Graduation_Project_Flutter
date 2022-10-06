@@ -5,7 +5,7 @@ import 'package:get_storage/get_storage.dart';
 
 class Api {
   static final dio = Dio(BaseOptions(
-    baseUrl: 'https://movies.app.bassilali.com',
+    baseUrl: 'http://app.wasel-sd.com',
     receiveDataWhenStatusError: true,
   ));
 
@@ -61,5 +61,9 @@ class Api {
 
   static Future<Response> getRelatedMovies({required int movieId}) async {
     return dio.get('/api/movies/${movieId}/related_movies');
+  }
+
+  static Future<Response> Login({required Map loginData}) async {
+    return dio.post('/api/drivers/login', data: loginData);
   }
 }
