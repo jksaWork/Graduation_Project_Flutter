@@ -29,11 +29,16 @@ class LoginController extends LoginControllerAbs {
       loginData['password'] = password.text;
       loginData['message_token'] = password.text;
       // print(loginData.toString());
-      var loginResponse = await Api.Login(loginData: loginData);
-      UserResponse userResponse = UserResponse.fromJson(loginResponse.data);
-      user.value = userResponse.user!;
-      GetStorage().write("login_token", userResponse.token);
-      Get.offAndToNamed(Home.routeName);
+      try {
+        var loginResponse = await Api.Login(loginData: loginData);
+
+        UserResponse userResponse = UserResponse.fromJson(loginResponse.data);
+        user.value = userResponse.user!;
+        GetStorage().write("login_token", userResponse.token);
+        Get.offAndToNamed(Home.routeName);
+      } catch (err) {
+        print(err);
+      }
     } else {
       // print('now');
 

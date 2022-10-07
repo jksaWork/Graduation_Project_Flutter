@@ -1,5 +1,6 @@
 import 'package:real_state_mangament/core/Services/my_services.dart';
 import 'package:real_state_mangament/data/Source/Static/on_board_list.dart';
+import 'package:real_state_mangament/views/Home/Home.dart';
 import 'package:real_state_mangament/views/auth/login/login.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
@@ -24,7 +25,7 @@ class onBoardingController extends onBoardingAbs {
     // print('go to next Fun');
     if (currentIndex + 1 == OnBoardingLength) {
       service.sharedPreferences.setBool('first_time', true);
-      Get.offAllNamed(Login.routeName);
+      Get.offAllNamed(Home.routeName);
     }
     currentIndex++;
     pageController.animateToPage(currentIndex,

@@ -11,22 +11,26 @@ class AppBarWithOfferService extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        child: Container(
-      width: double.infinity,
-      height: MediaQuery.of(context).size.height * .25,
-      decoration: const ShapeDecoration(
-        color: AppColor.primaryColor,
-        shape: SmoothRectangleBorder(
-          borderRadius: SmoothBorderRadius.only(
-            bottomLeft: SmoothRadius(
-              cornerRadius: AppBorderRaduis.smallsize,
-              cornerSmoothing: .1,
+        color: Colors.white,
+        margin: EdgeInsets.all(0),
+        child: ClipRRect(
+          child: Container(
+            width: double.infinity,
+            height: MediaQuery.of(context).size.height * .25,
+            decoration: const ShapeDecoration(
+              color: AppColor.primaryColor,
+              shape: SmoothRectangleBorder(
+                borderRadius: SmoothBorderRadius.only(
+                  bottomLeft: SmoothRadius(
+                    cornerRadius: AppBorderRaduis.smallsize,
+                    cornerSmoothing: .1,
+                  ),
+                ),
+              ),
             ),
+            child: Column(children: [CustomAppBar(), ServiceSection()]),
+            // child: Text('Hello'),
           ),
-        ),
-      ),
-      child: Column(children: [CustomAppBar(), ServiceSection()]),
-      // child: Text('Hello'),
-    ));
+        ));
   }
 }

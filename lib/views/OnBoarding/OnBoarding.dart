@@ -45,7 +45,6 @@ class OnBoarding extends StatelessWidget {
                     ),
                     child: Container(
                       height: 200,
-
                       // width: 100,
                       child: PageViewSections(),
                     ),
@@ -54,6 +53,7 @@ class OnBoarding extends StatelessWidget {
               ),
               Container(
                 width: double.infinity,
+                color: Colors.white,
                 height: MediaQuery.of(context).size.height / 2 - 10,
                 child: ClipRRect(
                   child: Container(
@@ -64,7 +64,7 @@ class OnBoarding extends StatelessWidget {
                         borderRadius: SmoothBorderRadius.only(
                           topRight: SmoothRadius(
                             cornerRadius: AppBorderRaduis.size,
-                            cornerSmoothing: 1.4,
+                            cornerSmoothing: .4,
                           ),
                         ),
                       ),
@@ -76,7 +76,7 @@ class OnBoarding extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         Container(
-                          height: 100,
+                          height: 120,
                           child: TextPageViewSections(),
                         ),
                         DotSections(),
