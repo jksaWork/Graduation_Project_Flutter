@@ -31,6 +31,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
           fontFamily: 'Cairo',
           primarySwatch: Colors.blue,
+          // theme: ThemeData(fontFamily: 'Cairo'),
           textTheme: TextTheme(
               // titleLarge: TextStyle(color: Colors.white),
               // titleMedium: TextStyle(color: Colors.black),

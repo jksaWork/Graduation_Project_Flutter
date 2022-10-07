@@ -64,4 +64,11 @@ class AppSvgImg {
   static SvgPicture securty = SvgPicture.asset(
     'assets/images/scurity.svg',
   );
+
+  static SvgPicture search = SvgPicture.asset(
+    'assets/icons/Search Icon.svg',
+    color: Colors.white,
+    // width: 15,
+    // height: 300,
+  );
 }

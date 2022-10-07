@@ -33,8 +33,7 @@ class LoginController extends LoginControllerAbs {
       UserResponse userResponse = UserResponse.fromJson(loginResponse.data);
       user.value = userResponse.user!;
       GetStorage().write("login_token", userResponse.token);
-      // Get.to(Home);
-      Get.toNamed(Home.routeName);
+      Get.offAndToNamed(Home.routeName);
     } else {
       // print('now');
 

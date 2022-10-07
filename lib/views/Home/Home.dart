@@ -1,5 +1,6 @@
 import 'package:real_state_mangament/core/Shared/app_bars.dart';
 import 'package:flutter/material.dart';
+import 'package:real_state_mangament/views/Home/widgets/AppBarWithOffer.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
@@ -7,7 +8,15 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: BarWithNowBackArrow(context, "Home"),
+      body: SafeArea(
+          child: Container(
+        child: Column(
+          children: [
+            AppBarWithOfferService(),
+            Container(),
+          ],
+        ),
+      )),
     );
   }
 }

@@ -13,9 +13,8 @@ class ContinueButton extends StatelessWidget {
           child: Container(
             width: double.infinity,
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
-              color: AppColor.primaryColor,
-            ),
+                borderRadius: BorderRadius.circular(10),
+                color: AppColor.secondColor),
             margin: EdgeInsets.symmetric(vertical: 30),
             padding: EdgeInsets.all(15),
             child: Text(
