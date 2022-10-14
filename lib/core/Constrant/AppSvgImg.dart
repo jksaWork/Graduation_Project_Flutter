@@ -1,3 +1,4 @@
+import 'package:real_state_mangament/core/Constrant/AppColors.dart';
 import 'package:real_state_mangament/core/Constrant/AppImages.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:flutter/material.dart';
@@ -70,5 +71,14 @@ class AppSvgImg {
     color: Colors.white,
     // width: 15,
     // height: 300,
+  );
+
+  static SvgPicture heart = SvgPicture.asset(
+    'assets/icons/Heart Icon.svg',
+  );
+
+  static SvgPicture heart2 = SvgPicture.asset(
+    'assets/icons/Heart Icon_2.svg',
+    color: AppColor.secondColor,
   );
 }

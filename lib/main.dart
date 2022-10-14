@@ -2,6 +2,7 @@ import 'package:real_state_mangament/core/Services/api.dart';
 import 'package:real_state_mangament/core/Services/my_services.dart';
 import 'package:real_state_mangament/core/Translations/localizationController.dart';
 import 'package:real_state_mangament/core/Translations/translation.dart';
+import 'package:real_state_mangament/data/Source/Static/real_state_static.dart';
 import 'package:real_state_mangament/routes.dart';
 import 'package:real_state_mangament/views/OnBoarding/OnBoarding.dart';
 import 'package:real_state_mangament/views/auth/login/login.dart';

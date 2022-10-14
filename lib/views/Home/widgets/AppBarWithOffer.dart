@@ -16,7 +16,7 @@ class AppBarWithOfferService extends StatelessWidget {
         child: ClipRRect(
           child: Container(
             width: double.infinity,
-            height: MediaQuery.of(context).size.height * .25,
+            height: MediaQuery.of(context).size.height * .20,
             decoration: const ShapeDecoration(
               color: AppColor.primaryColor,
               shape: SmoothRectangleBorder(

@@ -11,7 +11,7 @@ class CustomAppBar extends StatelessWidget {
       backgroundColor: AppColor.primaryColor,
       shadowColor: AppColor.primaryColor,
       elevation: 0,
-      title: Text('عقار'),
+      title: Text('عقاري'),
       leading: Icon(Icons.search),
       actions: [
         Padding(

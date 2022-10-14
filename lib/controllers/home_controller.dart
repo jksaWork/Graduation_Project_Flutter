@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:real_state_mangament/core/Services/api.dart';
+import 'package:real_state_mangament/data/Source/Static/real_state_static.dart';
 
 class HomeControler extends GetxController {
 // final MyRepository repository;
 // MyController(this.repository);
   RxBool isLoaading = false.obs;
-
+  RxList realStates = [...StaticRealState].obs;
   // On In Decator Tap
   onTap(int value) {
     isLoaading.value = true;
@@ -25,6 +26,8 @@ class HomeControler extends GetxController {
       update();
     } catch (error) {
       print(error);
+      isLoaading.value = false;
+      update();
     }
     // Map response = OffertResponse.fromJson(OffertResponse.data);
   }
