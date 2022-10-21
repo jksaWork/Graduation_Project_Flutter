@@ -12,6 +12,7 @@ import 'package:real_state_mangament/views/Home/widgets/offer_sections.dart';
 import 'package:real_state_mangament/views/OnBoarding/Widgets/Text_page_view.dart';
 import 'package:real_state_mangament/views/OnBoarding/Widgets/dot_sections.dart';
 import 'package:real_state_mangament/views/OnBoarding/Widgets/page_view_bulider.dart';
+import 'package:real_state_mangament/views/search/Search.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);

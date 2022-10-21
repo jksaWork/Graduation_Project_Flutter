@@ -72,6 +72,11 @@ class AppSvgImg {
     // width: 15,
     // height: 300,
   );
+  static SvgPicture search2 = SvgPicture.asset(
+    'assets/icons/Search Icon.svg',
+    width: 20,
+    // color: AppColor.primaryColor,
+  );
 
   static SvgPicture heart = SvgPicture.asset(
     'assets/icons/Heart Icon.svg',
