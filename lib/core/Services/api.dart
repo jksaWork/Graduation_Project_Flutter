@@ -5,7 +5,7 @@ import 'package:get_storage/get_storage.dart';
 
 class Api {
   static final dio = Dio(BaseOptions(
-    baseUrl: 'http://app.wasel-sd.com',
+    baseUrl: 'http://aqari.gulfsmo.net',
     receiveDataWhenStatusError: true,
   ));
 
@@ -69,5 +69,9 @@ class Api {
 
   static Future<Response> FetchOffer() async {
     return dio.get('/api/drivers/orderHistory');
+  }
+
+  static Future<Response> FetchAreas() async {
+    return dio.get('/api/areas');
   }
 }

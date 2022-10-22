@@ -1,6 +1,6 @@
 // @dart=2.9
 
-import 'package:flutter_settings_screens/flutter_settings_screens.dart';
+// import 'package:flutter_settings_screens/flutter_settings_screens.dart';
 import 'package:real_state_mangament/core/Services/api.dart';
 import 'package:real_state_mangament/core/Services/my_services.dart';
 import 'package:real_state_mangament/core/Translations/localizationController.dart';
@@ -14,7 +14,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 void main() async {
-  await Settings.init(cacheProvider: SharePreferenceCache());
+  // await Settings.init(cacheProvider: SharePreferenceCache());
   WidgetsFlutterBinding.ensureInitialized();
   await initMyService();
   Api.initilzieIntercepters();

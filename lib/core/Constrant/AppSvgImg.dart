@@ -86,4 +86,8 @@ class AppSvgImg {
     'assets/icons/Heart Icon_2.svg',
     color: AppColor.secondColor,
   );
+
+  static SvgPicture notFound = SvgPicture.asset(
+    'assets/images/not_found2.svg',
+  );
 }
