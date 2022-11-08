@@ -1,4 +1,6 @@
+import 'package:figma_squircle/figma_squircle.dart';
 import 'package:real_state_mangament/controllers/auth/register_controller.dart';
+import 'package:real_state_mangament/core/Constrant/AppColors.dart';
 import 'package:real_state_mangament/core/Constrant/AppSvgImg.dart';
 import 'package:real_state_mangament/core/Functions/vaidate_input.dart';
 import 'package:real_state_mangament/core/Shared/app_bars.dart';
@@ -18,18 +20,41 @@ class Register extends StatelessWidget {
   Widget build(BuildContext context) {
     registerController controller = Get.put(registerController());
     return Scaffold(
-      appBar: BarWithArrow(context, ' Compleated Profile'),
+      appBar: BarWithArrow(context, 'Register Account'),
       body: Container(
-        color: Colors.white,
-        padding: EdgeInsets.all(20),
+        // color: Colors.white,
+        // padding: EdgeInsets.all(20),
         child: ListView(children: [
-          AuthPageHeading(
-              head: 'Register Account',
-              description:
-                  'Type Your Account Inforamtion And Join To  to Thiget" in commerce.s He'),
+          Container(
+            decoration: const ShapeDecoration(
+              color: AppColor.primaryColor,
+              shape: SmoothRectangleBorder(
+                borderRadius: SmoothBorderRadius.only(
+                  bottomLeft: SmoothRadius(
+                    cornerRadius: 50,
+                    cornerSmoothing: .1,
+                  ),
+                  bottomRight: SmoothRadius(
+                    cornerRadius: 50,
+                    cornerSmoothing: 1.4,
+                  ),
+                ),
+              ),
+            ),
+            child: AuthPageHeading(
+                head: 'Wellcome Back',
+                description:
+                    'is important to document a parent’s attendance using a sign-in sheet as it provides proof of'),
+          ),
+          SizedBox(height: 20),
           Container(
             child: Column(
               children: [
+                CustomTextFiled(
+                    validator: (val) => validInput(val!, 8, 30, ''),
+                    controller: controller.name,
+                    title: 'Name',
+                    prefiexIcon: AppSvgImg.mail),
                 CustomTextFiled(
                     validator: (val) => validInput(val!, 8, 30, ''),
                     controller: controller.email,
@@ -42,14 +67,16 @@ class Register extends StatelessWidget {
                     prefiexIcon: AppSvgImg.Lock),
                 CustomTextFiled(
                     validator: (val) => validInput(val!, 8, 30, ''),
-                    controller: controller.password,
-                    title: 'Confirm Password',
+                    controller: controller.phone,
+                    title: 'phone',
                     prefiexIcon: AppSvgImg.Lock),
                 // SizedBox(height: 10),
-                ContinueButton(press: () {
-                  // print('tabed 5 imes ');
-                  Get.toNamed(CompletedProfile.routeName);
-                }),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  child: ContinueButton(press: () {
+                    controller.registreClient();
+                  }),
+                ),
                 SocialLinks(),
               ],
             ),

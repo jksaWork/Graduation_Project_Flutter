@@ -64,7 +64,7 @@ class Api {
   }
 
   static Future<Response> Login({required Map loginData}) async {
-    return dio.post('/api/drivers/login', data: loginData);
+    return dio.post('/api/client/login', data: loginData);
   }
 
   static Future<Response> FetchOffer() async {

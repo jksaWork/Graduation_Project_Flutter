@@ -1,3 +1,4 @@
+import 'package:real_state_mangament/Middlewares/authunticated_middleware.dart';
 import 'package:real_state_mangament/Middlewares/onbarding_middleware.dart';
 import 'package:real_state_mangament/views/Home/Account.dart/Account.dart';
 import 'package:real_state_mangament/views/Home/Home.dart';
@@ -14,15 +15,19 @@ import 'package:real_state_mangament/views/search/Op-search.dart';
 import 'package:real_state_mangament/views/search/Search.dart';
 
 List<GetPage<dynamic>>? routes = [
-  GetPage(name: '/', page: () => const Search(), middlewares: [
+  GetPage(name: '/', page: () => const Login(), middlewares: [
     OnBoardingMiddleWare(),
+    AuthUntecatedMiddleware(),
   ]),
   //GetPage(name: Setting_page.routeName, page: () => const Setting_page()),
-  GetPage(name: Login.routeName, page: () => const Login()),
+  GetPage(name: Login.routeName, page: () => const Login(), middlewares: [
+    AuthUntecatedMiddleware(),
+  ]),
   GetPage(name: Register.routeName, page: () => const Register()),
   GetPage(
       name: CompletedProfile.routeName, page: () => const CompletedProfile()),
   GetPage(name: LogginSuccess.routeName, page: () => const LogginSuccess()),
   GetPage(name: ForgetPassword.routeName, page: () => const ForgetPassword()),
   GetPage(name: Home.routeName, page: () => const Home()),
+  GetPage(name: Search.routeName, page: () => const Search()),
 ];

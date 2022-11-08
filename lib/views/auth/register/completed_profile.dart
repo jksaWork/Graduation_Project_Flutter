@@ -31,12 +31,12 @@ class CompletedProfile extends StatelessWidget {
               children: [
                 CustomTextFiled(
                     validator: (val) => validInput(val!, 8, 30, ''),
-                    controller: controller.firstNmae,
+                    controller: controller.name,
                     title: 'First Name',
                     prefiexIcon: AppSvgImg.mail),
                 CustomTextFiled(
                     validator: (val) => validInput(val!, 8, 30, ''),
-                    controller: controller.lastNmae,
+                    controller: controller.name,
                     title: 'Last Name',
                     prefiexIcon: AppSvgImg.Lock),
                 CustomTextFiled(
@@ -46,7 +46,7 @@ class CompletedProfile extends StatelessWidget {
                     prefiexIcon: AppSvgImg.Lock),
                 CustomTextFiled(
                     validator: (val) => validInput(val!, 8, 30, ''),
-                    controller: controller.adress,
+                    controller: controller.name,
                     title: 'Address',
                     prefiexIcon: AppSvgImg.Lock),
                 // SizedBox(height: 10),

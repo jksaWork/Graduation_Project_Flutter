@@ -24,8 +24,12 @@ AppBar BarWithArrow(context, String title) {
       centerTitle: true,
       title: Text(
         title,
-        style: Theme.of(context).textTheme.titleLarge,
+        style: Theme.of(context)
+            .textTheme
+            .titleLarge!
+            .copyWith(color: Colors.white),
       ),
+      backgroundColor: AppColor.primaryColor,
       leading: IconButton(
           onPressed: () {
             print('helo Jksa');
@@ -33,10 +37,9 @@ AppBar BarWithArrow(context, String title) {
           },
           icon: Icon(
             Icons.arrow_back_ios,
-            color: Colors.black,
+            color: Colors.white,
           )
           // IconThemeData(color: Colors.black, size: 20),
           ),
-      backgroundColor: Colors.white,
       elevation: 0);
 }

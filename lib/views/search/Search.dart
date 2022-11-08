@@ -19,7 +19,7 @@ import 'package:real_state_mangament/views/search/widgets/bottom_nvaigation_bar.
 import 'package:real_state_mangament/views/search/widgets/search_offers_item.dart';
 
 class Search extends StatelessWidget {
-  static var routeName;
+  static String routeName = '/search_screen';
 
   const Search({Key? key}) : super(key: key);
 
