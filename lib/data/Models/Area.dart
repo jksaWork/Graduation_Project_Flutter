@@ -30,7 +30,7 @@ String areaToJson(Area data) => json.encode(data.toJson());
 
 //  Area Response
 class AreasResponse {
-  late List<Area> areas;
+  List<Area> areas = [];
   late String token;
 
   AreasResponse.fromJson(Map json) {

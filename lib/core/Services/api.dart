@@ -71,7 +71,7 @@ class Api {
     return dio.get('/api/drivers/orderHistory');
   }
 
-  static Future<Response> FetchAreas() async {
+  static Future<Response> fetchAreas() async {
     return dio.get('/api/areas');
   }
 }

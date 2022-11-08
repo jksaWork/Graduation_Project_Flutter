@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:real_state_mangament/core/Constrant/AppColors.dart';
 import 'package:real_state_mangament/core/Constrant/AppSvgImg.dart';
+import 'package:real_state_mangament/views/search/Search.dart';
 
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar({Key? key}) : super(key: key);
@@ -12,7 +14,10 @@ class CustomAppBar extends StatelessWidget {
       shadowColor: AppColor.primaryColor,
       elevation: 0,
       title: Text('عقاري'),
-      leading: Icon(Icons.search),
+      leading: GestureDetector(
+        child: Icon(Icons.search),
+        onTap: () => Get.toNamed(Search.routeName),
+      ),
       actions: [
         Padding(
           padding: EdgeInsets.only(left: 20),

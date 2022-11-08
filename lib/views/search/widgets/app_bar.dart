@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:get/get.dart';
 import 'package:real_state_mangament/core/Constrant/AppColors.dart';
 
 class SerachAppBar extends StatelessWidget {
@@ -26,7 +27,9 @@ AppBar SearchAppBarONe() {
     leading: IconButton(
       iconSize: 20,
       color: Colors.white,
-      onPressed: () {},
+      onPressed: () {
+        Get.back();
+      },
       icon: Icon(
         Icons.arrow_back_ios,
       ),
