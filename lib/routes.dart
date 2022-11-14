@@ -1,5 +1,6 @@
 import 'package:real_state_mangament/Middlewares/authunticated_middleware.dart';
 import 'package:real_state_mangament/Middlewares/onbarding_middleware.dart';
+import 'package:real_state_mangament/views/Favorate/favaorate_page.dart';
 import 'package:real_state_mangament/views/Home/Account.dart/Account.dart';
 import 'package:real_state_mangament/views/Home/Home.dart';
 import 'package:real_state_mangament/views/OnBoarding/OnBoarding.dart';
@@ -15,10 +16,7 @@ import 'package:real_state_mangament/views/search/Op-search.dart';
 import 'package:real_state_mangament/views/search/Search.dart';
 
 List<GetPage<dynamic>>? routes = [
-  GetPage(name: '/', page: () => const Login(), middlewares: [
-    OnBoardingMiddleWare(),
-    AuthUntecatedMiddleware(),
-  ]),
+  GetPage(name: '/', page: () => const FavoratePage()),
   //GetPage(name: Setting_page.routeName, page: () => const Setting_page()),
   GetPage(name: Login.routeName, page: () => const Login(), middlewares: [
     AuthUntecatedMiddleware(),

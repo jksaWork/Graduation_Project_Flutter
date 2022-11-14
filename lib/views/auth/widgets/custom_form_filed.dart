@@ -33,6 +33,7 @@ class CustomTextFiled extends StatelessWidget {
             ),
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(50),
+              // borderSide: BorderSide(color: colo)
             ),
             focusedBorder: OutlineInputBorder(
               borderSide: BorderSide(width: 1.0, color: AppColor.primaryColor),

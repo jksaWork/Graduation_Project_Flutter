@@ -14,12 +14,12 @@ class SerachAppBar extends StatelessWidget {
   }
 }
 
-AppBar SearchAppBarONe() {
+AppBar SearchAppBarONe({String? title = null}) {
   return AppBar(
     backgroundColor: AppColor.primaryColor,
     // shape: StadiumBorder(),
     title: Text(
-      "عقاري",
+      title == null ? "عقاري" : title,
       style: TextStyle(color: Colors.white, fontSize: 22),
     ),
     centerTitle: true,

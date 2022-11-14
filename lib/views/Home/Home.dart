@@ -6,6 +6,8 @@ import 'package:real_state_mangament/core/Constrant/AppBorderRaduis.dart';
 import 'package:real_state_mangament/core/Constrant/AppColors.dart';
 import 'package:real_state_mangament/core/Shared/app_bars.dart';
 import 'package:flutter/material.dart';
+import 'package:real_state_mangament/data/Source/Static/floating_navigation_bar.dart';
+import 'package:real_state_mangament/views/Custom/custom_floting_bar.dart';
 import 'package:real_state_mangament/views/Home/widgets/AppBarWithOffer.dart';
 import 'package:real_state_mangament/views/Home/widgets/RealStateComponets.dart';
 import 'package:real_state_mangament/views/Home/widgets/offer_sections.dart';
@@ -35,9 +37,14 @@ class Home extends StatelessWidget {
                     Container(
                       width: double.infinity,
                       // color: AppColor.primaryColor,
-                      height: MediaQuery.of(context).size.height * .80 - 64,
+                      height: MediaQuery.of(context).size.height * .80 - 24,
                       child: OffersSection(),
-                    )
+                    ),
+                    const Positioned(
+                      bottom: 10,
+                      // left: 200,
+                      child: CustomFloatingNav(pageid: 2),
+                    ),
                   ],
                 )
               ],

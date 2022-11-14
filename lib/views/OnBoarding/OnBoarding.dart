@@ -24,7 +24,6 @@ class OnBoarding extends StatelessWidget {
           width: double.infinity,
           child: Column(
             // mainAxisAlignment: MainAxisAlignment.center,
-
             children: [
               Container(
                 width: double.infinity,

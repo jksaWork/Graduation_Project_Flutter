@@ -19,7 +19,7 @@ class OffersSection extends StatelessWidget {
       return Container(
         // color: AppColor.primaryColor,
         child: Container(
-          height: MediaQuery.of(context).size.height * .80,
+          height: MediaQuery.of(context).size.height,
           // clipBehavior: Clip.antiAlias,
           padding: EdgeInsets.symmetric(horizontal: 10),
           decoration: const ShapeDecoration(
