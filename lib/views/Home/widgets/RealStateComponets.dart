@@ -36,8 +36,8 @@ class RealStateComponent extends StatelessWidget {
                       BoxDecoration(borderRadius: BorderRadius.circular(20)),
                   child: FadeInImage.memoryNetwork(
                     placeholder: kTransparentImage,
-                    image: state.image != null
-                        ? state.image!
+                    image: state.mainImage != null
+                        ? state.mainImage
                         : 'https://cdn.pixabay.com/photo/2016/11/18/17/46/house-1836070__340.jpg',
                     fit: BoxFit.cover,
                     width: double.infinity,
@@ -63,7 +63,7 @@ class RealStateComponent extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        state.name!,
+                        state.title,
                         style: TextStyle(fontWeight: FontWeight.bold),
                       ),
                       Container(
@@ -78,7 +78,7 @@ class RealStateComponent extends StatelessWidget {
                                 size: 20,
                               ),
                               SizedBox(width: 10),
-                              Text(state.location!),
+                              Text(state.location),
                             ]),
                       )
                     ],
@@ -88,7 +88,7 @@ class RealStateComponent extends StatelessWidget {
                   width: 50,
                   child: Center(
                     child:
-                        state.isFavorate! ? AppSvgImg.heart2 : AppSvgImg.heart,
+                        state.isFavorate ? AppSvgImg.heart2 : AppSvgImg.heart,
                   ),
                 ),
               ],

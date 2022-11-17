@@ -67,8 +67,9 @@ class Api {
     return dio.post('/api/client/login', data: loginData);
   }
 
-  static Future<Response> FetchOffer() async {
-    return dio.get('/api/drivers/orderHistory');
+  static Future<Response> FetchOffer({int? service = 1, int page = 1}) async {
+    return dio.get('/api/offers',
+        queryParameters: {'service': service, 'page': page});
   }
 
   static Future<Response> fetchAreas() async {

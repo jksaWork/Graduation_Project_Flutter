@@ -8,6 +8,7 @@ class HomeControler extends GetxController {
 // final MyRepository repository;
 // MyController(this.repository);
   RxBool isLoaading = false.obs;
+  int serviceid = 1;
   RxList realStates = [...StaticRealState].obs;
   // On In Decator Tap
   onTap(int value) {
@@ -18,9 +19,9 @@ class HomeControler extends GetxController {
   }
 
   fetchOffers(int value) async {
-    // print('service_id$value');
+    print('service_id$value');
     try {
-      var OffertResponse = await Api.FetchOffer();
+      var OffertResponse = await Api.FetchOffer(service: value);
       print(OffertResponse.toString());
       print('has feched ---------------------------');
       isLoaading.value = false;
@@ -34,8 +35,9 @@ class HomeControler extends GetxController {
   }
 
   @override
-  void onInit() {
-    // Jksa Altigani Osman
+  void onInit() async {
+    print('inint the Controller -----------------------');
+    await fetchOffers(1);
     Get.put(SearchController());
     super.onInit();
   }

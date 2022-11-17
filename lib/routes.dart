@@ -16,7 +16,7 @@ import 'package:real_state_mangament/views/search/Op-search.dart';
 import 'package:real_state_mangament/views/search/Search.dart';
 
 List<GetPage<dynamic>>? routes = [
-  GetPage(name: '/', page: () => const FavoratePage()),
+  GetPage(name: '/', page: () => const OnBoarding()),
   //GetPage(name: Setting_page.routeName, page: () => const Setting_page()),
   GetPage(name: Login.routeName, page: () => const Login(), middlewares: [
     AuthUntecatedMiddleware(),
@@ -28,4 +28,5 @@ List<GetPage<dynamic>>? routes = [
   GetPage(name: ForgetPassword.routeName, page: () => const ForgetPassword()),
   GetPage(name: Home.routeName, page: () => const Home()),
   GetPage(name: Search.routeName, page: () => const Search()),
+  GetPage(name: FavoratePage.routeName, page: () => const FavoratePage())
 ];

@@ -1,26 +1,90 @@
+import 'package:real_state_mangament/data/Models/Area.dart';
+import 'package:real_state_mangament/data/Models/Image.dart';
 import 'package:real_state_mangament/data/Models/RealState.dart';
+import 'package:real_state_mangament/data/Source/Static/areas_static.dart';
 
 RealState one = RealState(
-    id: 12,
-    name: "شقه مفروشه",
-    image:
-        'https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=600',
-    location: 'الخرطوم 2 ',
-    isFavorate: true);
+  isFavorate: true,
+  areaId: 1,
+  area: areaone,
+  images: [
+    Image(
+        id: 1,
+        url:
+            'https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=600')
+  ],
+  id: 12,
+  location: 'الخرطوم 2 ',
+  isAvaliable: 1,
+  mainImage:
+      'https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=600',
+  shortDesc: "Hello From Here ",
+  longDesc: 'Hello Form There ',
+  service: areaone,
+  type: areaone,
+  title: 'Hello Jksa',
+  lat: '15.11',
+  long: 'Hello jksa',
+  status: 'new',
+  typeId: 1,
+  clientId: 1,
+  serviceId: 1,
+);
+
+RealState there = RealState(
+  areaId: 1,
+  area: areaone,
+  images: [
+    Image(
+        id: 1,
+        url:
+            'https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=600')
+  ],
+  id: 12,
+  location: 'الخرطوم 2 ',
+  isAvaliable: 1,
+  mainImage:
+      'https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=600',
+  shortDesc: "Hello From Here ",
+  longDesc: 'Hello Form There ',
+  service: areaone,
+  type: areaone,
+  title: 'Hello Jksa',
+  lat: '15.11',
+  long: 'Hello jksa',
+  status: 'new',
+  typeId: 1,
+  clientId: 1,
+  serviceId: 1,
+  isFavorate: true,
+);
 
 RealState tow = RealState(
-    id: 12,
-    name: "شقه عاديه",
-    image:
-        'https://cdn.pixabay.com/photo/2016/11/18/17/46/house-1836070__340.jpg',
-    location: ' ام درمان المهندسين',
-    isFavorate: true);
-RealState three = RealState(
-    id: 12,
-    name: "بيت ارضي ",
-    image:
-        'https://images.pexels.com/photos/1571463/pexels-photo-1571463.jpeg?auto=compress&cs=tinysrgb&w=600',
-    location: 'شارع الستين ',
-    isFavorate: false);
+  isFavorate: true,
+  areaId: 1,
+  area: areaone,
+  images: [
+    Image(
+        id: 1,
+        url:
+            'https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=600')
+  ],
+  id: 12,
+  location: 'الخرطوم 2 ',
+  isAvaliable: 1,
+  mainImage:
+      'https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=600',
+  shortDesc: "Hello From Here ",
+  longDesc: 'Hello Form There ',
+  service: areaone,
+  type: areaone,
+  title: 'Hello Jksa',
+  lat: '15.11',
+  long: 'Hello jksa',
+  status: 'new',
+  typeId: 1,
+  clientId: 1,
+  serviceId: 1,
+);
 
-List<RealState> StaticRealState = [one, tow, three, one];
+List<RealState> StaticRealState = [one, tow, there, one];

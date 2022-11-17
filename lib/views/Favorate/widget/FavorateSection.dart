@@ -9,7 +9,7 @@ class FavorateSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: MediaQuery.of(context).size.height,
+      height: MediaQuery.of(context).size.height - 100,
       child: ListView.builder(
         itemCount: favorate.length,
         itemBuilder: (BuildContext context, int index) {

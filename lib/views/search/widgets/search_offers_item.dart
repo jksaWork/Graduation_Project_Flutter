@@ -19,7 +19,7 @@ class SearchOffersItem extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: 7),
         child: Row(
           children: [
-            SmallRealStateImage(image:offer.image!),
+            SmallRealStateImage(image: offer.mainImage),
             SizedBox(width: 10),
             Container(
               child: Column(
@@ -27,7 +27,7 @@ class SearchOffersItem extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    offer.name!,
+                    offer.title,
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                   Container(
@@ -42,7 +42,7 @@ class SearchOffersItem extends StatelessWidget {
                             size: 20,
                           ),
                           SizedBox(width: 10),
-                          Text(offer.location!),
+                          Text(offer.location),
                           SizedBox(width: 10),
                         ]),
                   ),

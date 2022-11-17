@@ -7,7 +7,7 @@ import 'package:real_state_mangament/views/Home/widgets/offer_sections.dart';
 import 'package:real_state_mangament/views/search/widgets/app_bar.dart';
 
 class FavoratePage extends StatelessWidget {
-  static String routeName = 'favorate_page';
+  static String routeName = '/favorate_page';
   const FavoratePage({Key? key}) : super(key: key);
 
   @override
@@ -20,7 +20,7 @@ class FavoratePage extends StatelessWidget {
           children: [
             Container(
                 padding: EdgeInsets.all(10),
-                // height: MediaQuery.of(context).size.height,
+                // height: MediaQuery.of(context).size.height - 200,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -33,7 +33,6 @@ class FavoratePage extends StatelessWidget {
                 )),
             const Positioned(
               bottom: 10,
-              // left: 200,
               child: CustomFloatingNav(pageid: 3),
             ),
           ],

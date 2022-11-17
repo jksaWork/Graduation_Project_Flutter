@@ -3,18 +3,18 @@ import 'dart:convert';
 class Area {
   int id;
   String name;
-  String description;
+  String? description;
 
   Area({
     required this.id,
     required this.name,
-    required this.description,
+    this.description,
   });
 
   factory Area.fromJson(Map<String, dynamic> json) => Area(
         id: json["id"],
         name: json["name"],
-        description: json["description"],
+        // description: json["description"],
       );
 
   Map<String, dynamic> toJson() => {
