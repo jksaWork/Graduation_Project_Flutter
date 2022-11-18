@@ -68,7 +68,7 @@ class Api {
   }
 
   static Future<Response> FetchOffer({int? service = 1, int page = 1}) async {
-    return dio.get('/api/offers',
+    return dio.get('/api/client/offers',
         queryParameters: {'service': service, 'page': page});
   }
 

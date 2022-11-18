@@ -3,6 +3,7 @@
 //     final realState = realStateFromJson(jsonString);
 
 import 'dart:convert';
+import 'dart:ffi';
 
 import 'package:real_state_mangament/data/Models/Area.dart';
 import 'package:real_state_mangament/data/Models/Image.dart';
@@ -60,7 +61,7 @@ class RealState {
   final Area service;
   final dynamic agent;
   final List<Image> images;
-  final bool isFavorate;
+  final isFavorate;
 
   factory RealState.fromJson(Map<String, dynamic> json) => RealState(
         id: json["id"],
@@ -112,4 +113,11 @@ class RealState {
         "agent": agent,
         "images": List<dynamic>.from(images.map((x) => x.toJson())),
       };
+}
+
+class OfferResponse {
+  List<RealState> offers = [];
+  OfferResponse.fromJson(Map json) {
+    json['data'].forEach((area) => offers.add(RealState.fromJson(area)));
+  }
 }

@@ -13,8 +13,8 @@ class OnBoardingMiddleWare extends GetMiddleware {
   RouteSettings? redirect(String? route) {
     // print('in Side Middle Ware');
     // print(services.sharedPreferences.getBool('first_time'));
-    // if (services.sharedPreferences.getBool('first_time') != null) {
-    //   return RouteSettings(name: Login.routeName);
-    // }
+    if (services.sharedPreferences.getBool('first_time') != null) {
+      return RouteSettings(name: Login.routeName);
+    }
   }
 }

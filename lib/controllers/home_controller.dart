@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:real_state_mangament/controllers/Search/search_contrller.dart';
 import 'package:real_state_mangament/core/Services/api.dart';
+import 'package:real_state_mangament/data/Models/RealState.dart';
 import 'package:real_state_mangament/data/Source/Static/real_state_static.dart';
 
 class HomeControler extends GetxController {
 // final MyRepository repository;
-// MyController(this.repository);
-  RxBool isLoaading = false.obs;
+  RxBool isLoaading = true.obs;
   int serviceid = 1;
   RxList realStates = [...StaticRealState].obs;
   // On In Decator Tap
@@ -19,14 +19,19 @@ class HomeControler extends GetxController {
   }
 
   fetchOffers(int value) async {
-    print('service_id$value');
+    // print('service_id $value');
     try {
-      var OffertResponse = await Api.FetchOffer(service: value);
-      print(OffertResponse.toString());
-      print('has feched ---------------------------');
+      var data = await Api.FetchOffer(service: value);
+      OfferResponse offer = OfferResponse.fromJson(data.data);
+      print('---------------------- offer converted ------------------');
+      realStates = [...offer.offers].obs;
+      print('---------------------- end offer converted ------------------');
+
+      print(realStates.toString());
       isLoaading.value = false;
       update();
     } catch (error) {
+      print('errro happend ------------------------');
       print(error);
       isLoaading.value = false;
       update();
