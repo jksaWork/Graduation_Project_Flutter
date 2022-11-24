@@ -4,6 +4,7 @@ import 'package:real_state_mangament/data/Models/RealState.dart';
 import 'package:real_state_mangament/data/Source/Static/areas_static.dart';
 
 RealState one = RealState(
+  price: 255,
   isFavorate: true,
   areaId: 1,
   area: areaone,
@@ -32,6 +33,7 @@ RealState one = RealState(
 );
 
 RealState there = RealState(
+  price: 255,
   areaId: 1,
   area: areaone,
   images: [
@@ -60,6 +62,7 @@ RealState there = RealState(
 );
 
 RealState tow = RealState(
+  price: 255,
   isFavorate: true,
   areaId: 1,
   area: areaone,

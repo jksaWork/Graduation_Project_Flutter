@@ -17,7 +17,6 @@ class SearchController extends GetxController {
       var response = await Api.fetchAreas();
       AreasResponse areasResponse = AreasResponse.fromJson(response.data);
       serverArea = areasResponse.areas;
-      // update();
     } catch (err) {
       print(err);
     }

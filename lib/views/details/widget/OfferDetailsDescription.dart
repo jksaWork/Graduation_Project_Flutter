@@ -1,94 +1,125 @@
-// import 'package:e_commerce/screens/E1/screens/Helpers/E1Button.dart';
-// import 'package:e_commerce/screens/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:real_state_mangament/core/Constrant/AppColors.dart';
+import 'package:real_state_mangament/core/Functions/GetOfferDetailsRow.dart';
 import 'package:real_state_mangament/data/Models/RealState.dart';
-
-// import '../../../../../models/Produxt.dart';
+import 'package:real_state_mangament/views/details/widget/GoogleMapImageWidget.dart';
 
 class OfferDetailsDescription extends StatelessWidget {
   RealState offer;
-  OfferDetailsDescription({Key? key, required this.offer});
+  List DetialasRowList;
+  OfferDetailsDescription(
+      {Key? key, required this.offer, required this.DetialasRowList});
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      // padding: EdgeInsets.all(10),
       width: double.infinity,
-      padding: EdgeInsets.only(
-        top: 30,
-        left: 10,
-        bottom: 70,
-      ),
-      margin: EdgeInsets.only(
+      padding: const EdgeInsets.all(10),
+      margin: const EdgeInsets.only(
         top: 10,
       ),
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(70), topRight: Radius.circular(70))),
+              topLeft: Radius.circular(20), topRight: Radius.circular(20))),
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-        Text(offer.title, style: Theme.of(context).textTheme.headline6),
-        Align(
-          alignment: Alignment.topRight,
-          child: Container(
-            padding: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
-            decoration: BoxDecoration(
-                color: Colors.red[200],
-                borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(10),
-                    bottomLeft: Radius.circular(10))),
-            child: Icon(
-              Icons.heart_broken,
-              color: Colors.red,
-            ),
-          ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(offer.title, style: Theme.of(context).textTheme.headline6),
+            Container(
+              width: 60,
+              child: Row(
+                children: [
+                  Text('${offer.price}',
+                      style: Theme.of(context).textTheme.headline6),
+                  Container(
+                    decoration: BoxDecoration(
+                      color: AppColor.secondColor,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: const Padding(
+                      padding: const EdgeInsets.all(4),
+                      child: const Text(
+                        ' ج س',
+                        style:
+                            const TextStyle(color: Colors.white, fontSize: 10),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            )
+          ],
         ),
+        // DetailsRow(key: 'توع العقار', value: offer.type.name),
+        ...DetialasRowList.asMap()
+            .entries
+            .map((el) => DetailsRow(
+                key: el.value['key'],
+                value:
+                    GetOfferDetailsRow(offer: offer, type: el.value['value'])))
+            .toList(),
         Container(
-          padding: EdgeInsets.only(right: 50, left: 10, top: 10),
+          padding: const EdgeInsets.only(left: 10, top: 10),
           child: Text(
             offer.shortDesc,
-            style: TextStyle(fontSize: 13),
+            style: const TextStyle(fontSize: 13),
           ),
         ),
-        SizedBox(height: 20),
-        Container(
-          padding: EdgeInsets.only(left: 10),
-          child: Row(
-            children: [
-              Text(
-                'Read More Description...',
-                style: TextStyle(color: AppColor.primaryColor),
-              ),
-              SizedBox(
-                width: 5,
-              ),
-              Icon(
-                Icons.arrow_forward_ios,
-                color: AppColor.secondColor,
-                size: 13,
-              ),
-            ],
-          ),
-        ),
+        const SizedBox(height: 10),
         // Container(
-        //   padding: EdgeInsets.symmetric(vertical: 35, horizontal: 10),
-        //   child: SubmitButton('Add To Cart', () {}),
-        // )
+        //   padding: EdgeInsets.only(left: 10),
+        //   child: Text(
+        //     offer.shortDesc,
+        //     style: TextStyle(
+        //         color: AppColor.primaryColor,
+        //         fontSize: 18,
+        //         fontWeight: FontWeight.w400),
+        //   ),
+        // ),
+        Container(
+          padding: const EdgeInsets.only(left: 10),
+          child: Text(
+            offer.longDesc,
+            style: const TextStyle(
+                color: AppColor.primaryColor,
+                fontSize: 18,
+                fontWeight: FontWeight.w400),
+          ),
+        ),
+        GoogleMapImageWidget(offer, context),
       ]),
+    );
+  }
+
+  Container DetailsRow({required String key, required String value}) {
+    return Container(
+      child: Row(
+        children: [
+          Text(key + " : ", style: TextStyle(fontWeight: FontWeight.bold)),
+          SizedBox(width: 10),
+          Text(
+            value,
+            style: const TextStyle(fontSize: 13),
+          ),
+        ],
+      ),
     );
   }
 }
 
-Container GetCircleShpae() {
-  return Container(
-    child: Row(
-      children: [
-        Container(
-            width: 30,
-            height: 30,
-            decoration:
-                BoxDecoration(shape: BoxShape.circle, color: Colors.red)),
-      ],
-    ),
-  );
-}
+// Container   GetCircleShpae() {
+//   return   Container(
+//     child: Row(
+//       children: [
+//         Container(
+//             width: 30,
+//             height: 30,
+//             decoration:
+//                 BoxDecoration(shape: BoxShape.circle, color: Colors.red)),
+//       ],
+//     ),
+//   );
+// }

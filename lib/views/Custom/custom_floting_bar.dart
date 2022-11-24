@@ -15,33 +15,45 @@ class CustomFloatingNav extends StatelessWidget {
       width: MediaQuery.of(context).size.width,
       child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
         Container(
-            child: ClipRRect(
-          borderRadius: const SmoothBorderRadius.all(
-            SmoothRadius(
-              cornerRadius: 40,
-              cornerSmoothing: 1,
+            decoration: BoxDecoration(
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(.1),
+                  spreadRadius: 1,
+                  blurRadius: 5,
+                  offset: Offset(1, 1), // changes position of shadow
+                ),
+              ],
             ),
-          ),
-          child: Container(
-            width: 250,
-            // height: 60,
-            padding: EdgeInsets.all(15),
-            color: AppColor.primaryColor,
-            child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  ...flotingButtonNav.asMap().entries.map(
-                    (el) {
-                      var value = el.value;
-                      // var icon = el.value.icon;
-                      print(el.value['icon']);
-                      // print();
-                      return GetNavItem(el);
-                    },
-                  )
-                ]),
-          ),
-        ))
+            child: ClipRRect(
+              borderRadius: const SmoothBorderRadius.all(
+                SmoothRadius(
+                  cornerRadius: 40,
+                  cornerSmoothing: 1,
+                ),
+              ),
+              child: Container(
+                width: 250,
+                decoration: BoxDecoration(
+                  color: AppColor.primaryColor,
+                ),
+                // height: 60,
+                padding: EdgeInsets.all(15),
+                child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      ...flotingButtonNav.asMap().entries.map(
+                        (el) {
+                          var value = el.value;
+                          // var icon = el.value.icon;
+                          print(el.value['icon']);
+                          // print();
+                          return GetNavItem(el);
+                        },
+                      )
+                    ]),
+              ),
+            ))
       ]),
     );
   }
@@ -88,7 +100,7 @@ class CustomNavItem extends StatelessWidget {
         child: Icon(
           el,
           size: 25,
-          color: isactive ? Colors.white : AppColor.secondColor,
+          color: !isactive ? Colors.white : AppColor.secondColor,
         ),
       ),
     );

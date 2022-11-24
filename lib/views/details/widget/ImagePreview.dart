@@ -1,10 +1,10 @@
 import 'dart:ui';
-
-// import 'package:e_commerce/models/Produxt.dart';
-// import 'package:e_commerce/screens/constant.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:real_state_mangament/controllers/details_controller.dart';
 import 'package:real_state_mangament/core/Constrant/AppColors.dart';
 import 'package:real_state_mangament/data/Models/RealState.dart';
+import 'package:transparent_image/transparent_image.dart';
 
 class ImagePreview extends StatefulWidget {
   RealState offer;
@@ -19,26 +19,45 @@ class _ImagePreviewState extends State<ImagePreview> {
 
   @override
   Widget build(BuildContext context) {
+    DetailsController controller = Get.find<DetailsController>();
     // String image = widget.product.images[0];
     return Container(
       child: Column(
         children: [
-          SizedBox(
-            width: 170,
-            child: AspectRatio(
-              aspectRatio: 1,
-              child: Image.asset(widget.offer.mainImage),
-            ),
+          Container(
+            width: MediaQuery.of(context).size.width,
+            // margin: EdgeInsets.symmetric(horizontal: 20),
+
+            child: Stack(children: [
+              Container(
+                  height: MediaQuery.of(context).size.height * .33,
+                  child: Center(child: CircularProgressIndicator())),
+              Container(
+                clipBehavior: Clip.antiAlias,
+                decoration:
+                    BoxDecoration(borderRadius: BorderRadius.circular(10)),
+                child: FadeInImage.memoryNetwork(
+                  placeholder: kTransparentImage,
+                  image: controller.offerImages[controller.selectedindex],
+                  fit: BoxFit.cover,
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height * .33,
+                ),
+              )
+            ]),
           ),
           Container(
-            width: MediaQuery.of(context).size.width * .7,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
+            margin: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+            width: MediaQuery.of(context).size.width,
+            height: 70,
+            child: ListView(
+              scrollDirection: Axis.horizontal,
+              physics: BouncingScrollPhysics(),
               children: [
                 ...List.generate(
-                    widget.offer.images.length,
+                    controller.offerImages.length,
                     (index) => GetSmallPreveiwImage(
-                        widget.offer.images[index].url, index))
+                        controller.offerImages[index], index)),
               ],
             ),
           ),
@@ -48,30 +67,44 @@ class _ImagePreviewState extends State<ImagePreview> {
   }
 
   @override
-  GestureDetector GetSmallPreveiwImage(String image, index) {
-    return GestureDetector(
-      onTap: () {
-        print('index ================= $index');
-        print('selcetIndex ================= $selcetIndex');
-        setState(() {
-          selcetIndex = index;
-        });
-      },
-      child: Container(
-        padding: EdgeInsets.all(5),
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10),
-            border: Border.all(
-                color:
-                    selcetIndex == index ? AppColor.primaryColor : Colors.white,
-                width: .3),
-            color: Colors.white),
-        width: 50,
-        child: AspectRatio(
-          aspectRatio: 1,
-          child: Image.asset(image),
+  GetBuilder GetSmallPreveiwImage(String image, index) {
+    return GetBuilder<DetailsController>(builder: (controler) {
+      return GestureDetector(
+        onTap: () {
+          controler.updateIndex(index);
+        },
+        child: Container(
+          margin: EdgeInsets.symmetric(horizontal: 3),
+          padding: EdgeInsets.all(5),
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10),
+              border: Border.all(
+                  color: controler.selectedindex == index
+                      ? AppColor.primaryColor
+                      : Colors.white,
+                  width: .3),
+              color: Colors.white),
+          width: 70,
+          child: AspectRatio(
+            aspectRatio: 1,
+            child: Stack(children: [
+              Container(child: Center(child: CircularProgressIndicator())),
+              Container(
+                clipBehavior: Clip.antiAlias,
+                decoration:
+                    BoxDecoration(borderRadius: BorderRadius.circular(10)),
+                child: FadeInImage.memoryNetwork(
+                  placeholder: kTransparentImage,
+                  image: image,
+                  fit: BoxFit.cover,
+                  width: MediaQuery.of(context).size.width,
+                  height: 70,
+                ),
+              )
+            ]),
+          ),
         ),
-      ),
-    );
+      );
+    });
   }
 }

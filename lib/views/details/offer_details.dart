@@ -2,33 +2,53 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/avd.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:real_state_mangament/controllers/details_controller.dart';
+import 'package:real_state_mangament/core/Constrant/AppColors.dart';
+import 'package:real_state_mangament/core/Constrant/AppSvgImg.dart';
 import 'package:real_state_mangament/data/Models/RealState.dart';
 import 'package:real_state_mangament/views/details/widget/ImagePreview.dart';
 import 'package:real_state_mangament/views/details/widget/OfferDetailsDescription.dart';
 
 class OfferDetials extends StatelessWidget {
   static String routeName = '/offer_details';
-  const OfferDetials({Key? key}) : super(key: key);
-
+  DetailsController controllerdetails = Get.put(DetailsController());
+  OfferDetials({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    final args = Get.parameters['offer'];
-    RealState offer = realStateFromJson(args!);
     // print(offer.toJson());
     return Scaffold(
+      // floatingActionButtonLocation: FloatingActionButtonLocation(Center),
+      floatingActionButton: GestureDetector(
+        onTap: () => controllerdetails.launchWhatsapp(),
+        child: Container(
+          width: 70,
+          height: 70,
+          child: Center(child: AppSvgImg.WhatsappIcon),
+        ),
+      ),
       backgroundColor: Color(0xFFF4f6f9),
       body: Container(
-          child: SingleChildScrollView(
-        child: Column(children: [
-          CustomAppBarProductDetails(context, 3.5),
-          ImagePreview(
-            offer: offer,
-          ),
-          OfferDetailsDescription(
-            offer: offer,
-          ),
-        ]),
-      )),
+        child: Stack(
+          children: [
+            SingleChildScrollView(
+              child: Container(
+                child: Column(children: [
+                  ImagePreview(
+                    offer: controllerdetails.offer,
+                  ),
+                  OfferDetailsDescription(
+                    DetialasRowList: controllerdetails.DetialasRow,
+                    offer: controllerdetails.offer,
+                  ),
+                ]),
+              ),
+            ),
+            Positioned(
+                child: CustomAppBarProductDetails(
+                    context, controllerdetails.offer.price))
+          ],
+        ),
+      ),
     );
   }
 }
@@ -42,29 +62,29 @@ CustomAppBarProductDetails(context, rating) {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Container(
-            padding: EdgeInsets.only(left: 15, right: 10, top: 10, bottom: 10),
-            decoration: BoxDecoration(
+            padding:
+                const EdgeInsets.only(left: 15, right: 10, top: 10, bottom: 10),
+            decoration: const BoxDecoration(
               // borderRadius: BorderRadius.circular(20),
               color: Colors.white,
               shape: BoxShape.circle,
             ),
             child: GestureDetector(
               onTap: () => Navigator.of(context).pop(),
-              child: Icon(
+              child: const Icon(
                 Icons.arrow_back_ios,
                 size: 23,
               ),
             )),
         Container(
-          padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20), color: Colors.white),
           child: Row(
             children: [
               Text(rating.toString()),
               SizedBox(width: 5),
-              // .asset(),
-              SvgPicture.asset('assets/icons/Star Icon.svg'),
+              AppSvgImg.heart2,
             ],
           ),
         )

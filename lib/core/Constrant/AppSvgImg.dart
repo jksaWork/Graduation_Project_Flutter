@@ -90,4 +90,8 @@ class AppSvgImg {
   static SvgPicture notFound = SvgPicture.asset(
     'assets/images/not_found2.svg',
   );
+
+  static SvgPicture WhatsappIcon = SvgPicture.asset(
+    'assets/icons/whatsapp-svgrepo-com.svg',
+  );
 }

@@ -17,6 +17,7 @@ class RealState {
     required this.id,
     required this.areaId,
     required this.typeId,
+    required this.price,
     this.clientId,
     this.ownerId,
     required this.title,
@@ -41,6 +42,7 @@ class RealState {
 
   final int id;
   final int areaId;
+  final int price;
   final int typeId;
   final dynamic clientId;
   final dynamic ownerId;
@@ -86,6 +88,7 @@ class RealState {
         type: Area.fromJson(json["type"]),
         service: Area.fromJson(json["service"]),
         agent: json["agent"],
+        price: json['is_avaliable'],
         images: List<Image>.from(json["images"].map((x) => Image.fromJson(x))),
       );
 

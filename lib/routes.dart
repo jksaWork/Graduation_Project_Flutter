@@ -30,7 +30,7 @@ List<GetPage<dynamic>>? routes = [
   GetPage(name: LogginSuccess.routeName, page: () => const LogginSuccess()),
   GetPage(name: ForgetPassword.routeName, page: () => const ForgetPassword()),
   GetPage(name: Home.routeName, page: () => const Home()),
-  GetPage(name: OfferDetials.routeName, page: () => const OfferDetials()),
+  GetPage(name: OfferDetials.routeName, page: () => OfferDetials()),
 
   GetPage(name: Search.routeName, page: () => const Search()),
   GetPage(name: FavoratePage.routeName, page: () => const FavoratePage())
