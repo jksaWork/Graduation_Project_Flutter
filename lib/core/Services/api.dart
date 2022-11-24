@@ -13,13 +13,15 @@ class Api {
     dio.interceptors.add(InterceptorsWrapper(
       onRequest: (request, handler) async {
         GetStorage box = GetStorage();
-        var token = await GetStorage().read('login_token');
-        print(token);
+        var token =
+            '1|0It4iAMsv9YU7J6p2Hm7RbTH75qLJfWYMDyFIEg5'; //await GetStorage().read('login_token');
+        // print(token);
         Map<String, String> headers = {
           'Accept': 'application/json',
           'Content-Type': 'application/json',
           'Authorization': 'Bearer ${token}',
         };
+        // print(headers.toString());
         request.headers.addAll(headers);
         return handler.next(request);
       },
@@ -74,5 +76,9 @@ class Api {
 
   static Future<Response> fetchAreas() async {
     return dio.get('/api/areas');
+  }
+
+  static Future<Response> fetchFavorate() async {
+    return dio.get('/api/client/offers/favorate-list');
   }
 }
