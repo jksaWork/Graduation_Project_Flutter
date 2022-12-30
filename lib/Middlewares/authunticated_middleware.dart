@@ -14,7 +14,7 @@ class AuthUntecatedMiddleware extends GetMiddleware {
   RouteSettings? redirect(String? route) {
     // print('in Side Middle Ware');
     print(services.sharedPreferences.getString('client'));
-    if (services.sharedPreferences.getString('token') != null) {
+    if (services.sharedPreferences.getString('token') == null) {
       return RouteSettings(name: Home.routeName);
     }
   }

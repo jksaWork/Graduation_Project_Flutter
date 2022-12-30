@@ -13,16 +13,18 @@ import 'package:real_state_mangament/views/auth/register/register.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:real_state_mangament/views/details/offer_details.dart';
+import 'package:real_state_mangament/views/maps.dart';
 import 'package:real_state_mangament/views/search/Op-search.dart';
 import 'package:real_state_mangament/views/search/Search.dart';
 
 List<GetPage<dynamic>>? routes = [
-  GetPage(name: '/', page: () => const OnBoarding(), middlewares: [
-    OnBoardingMiddleWare(),
+  GetPage(name: '/', page: () => const MapsScreen(), middlewares: [
+    // OnBoardingMiddleWare(),
   ]),
   //GetPage(name: Setting_page.routeName, page: () => const Setting_page()),
   GetPage(name: Login.routeName, page: () => const Login(), middlewares: [
     AuthUntecatedMiddleware(),
+    // OnBoardingMiddleWare(),
   ]),
   GetPage(name: Register.routeName, page: () => const Register()),
   GetPage(
@@ -31,7 +33,6 @@ List<GetPage<dynamic>>? routes = [
   GetPage(name: ForgetPassword.routeName, page: () => const ForgetPassword()),
   GetPage(name: Home.routeName, page: () => const Home()),
   GetPage(name: OfferDetials.routeName, page: () => OfferDetials()),
-
   GetPage(name: Search.routeName, page: () => const Search()),
   GetPage(name: FavoratePage.routeName, page: () => const FavoratePage())
 ];

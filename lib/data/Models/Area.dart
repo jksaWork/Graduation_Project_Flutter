@@ -14,7 +14,6 @@ class Area {
   factory Area.fromJson(Map<String, dynamic> json) => Area(
         id: json["id"],
         name: json["name"],
-        // description: json["description"],
       );
 
   Map<String, dynamic> toJson() => {

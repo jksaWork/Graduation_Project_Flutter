@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:real_state_mangament/views/Favorate/favaorate_page.dart';
 import 'package:real_state_mangament/views/Home/Home.dart';
+import 'package:real_state_mangament/views/maps.dart';
 import 'package:real_state_mangament/views/search/Search.dart';
 
 List flotingButtonNav = [
   {
     'icon': Icons.map,
-    'route': 'jksa',
+    'route': MapsScreen.routeName,
   },
   {
     'icon': Icons.home,

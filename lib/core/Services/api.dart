@@ -81,4 +81,8 @@ class Api {
   static Future<Response> fetchFavorate() async {
     return dio.get('/api/client/offers/favorate-list');
   }
+
+  static Future<Response> fetchMarkers() async {
+    return dio.get('/api/client/offers/inMap');
+  }
 }
