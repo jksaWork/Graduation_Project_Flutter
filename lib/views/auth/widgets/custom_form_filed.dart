@@ -8,20 +8,24 @@ class CustomTextFiled extends StatelessWidget {
   final String? title;
   final TextEditingController? controller;
   final String? Function(String?)? validator;
+  // final String? Function(String?)? onChange;
+  final ValueChanged<String?>? valueChanged;
 
-  const CustomTextFiled({
-    Key? key,
-    required this.title,
-    required this.prefiexIcon,
-    required this.controller,
-    required this.validator,
-  }) : super(key: key);
+  const CustomTextFiled(
+      {Key? key,
+      required this.title,
+      required this.prefiexIcon,
+      required this.controller,
+      required this.validator,
+      this.valueChanged})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.all(15),
       child: TextFormField(
+        onChanged: valueChanged,
         validator: validator,
         controller: controller,
         decoration: InputDecoration(

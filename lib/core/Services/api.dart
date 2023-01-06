@@ -90,4 +90,8 @@ class Api {
   static Future<Response> toggelFavorate(int id) async {
     return dio.get('/api/client/offers/favorate/' + '$id');
   }
+
+  static Future<Response> fetchMarkers() async {
+    return dio.get('/api/client/offers/inMap');
+  }
 }

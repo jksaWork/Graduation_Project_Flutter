@@ -33,7 +33,7 @@ class FavoratePage extends StatelessWidget {
                 )),
             const Positioned(
               bottom: 10,
-              child: CustomFloatingNav(pageid: 3),
+              child: CustomFloatingNav(pageid: 2),
             ),
           ],
         ),
