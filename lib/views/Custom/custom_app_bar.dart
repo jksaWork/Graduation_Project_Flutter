@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:real_state_mangament/core/Constrant/AppColors.dart';
 import 'package:real_state_mangament/core/Constrant/AppSvgImg.dart';
+import 'package:real_state_mangament/google-map/Gmap2.dart';
 import 'package:real_state_mangament/views/search/Search.dart';
 
 class CustomAppBar extends StatelessWidget {
@@ -20,9 +21,14 @@ class CustomAppBar extends StatelessWidget {
       ),
       actions: [
         Padding(
-          padding: EdgeInsets.only(left: 20),
-          child: Icon(Icons.room_outlined),
-        )
+            padding: EdgeInsets.only(left: 20),
+            child: GestureDetector(
+              onTap: () => Get.replace(Map()),
+              child: Icon(Icons.room_outlined),
+            )
+            // Icon(Icons.room_outlined),
+
+            )
       ],
       centerTitle: true,
     );

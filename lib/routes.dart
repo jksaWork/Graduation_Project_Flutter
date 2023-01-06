@@ -15,9 +15,10 @@ import 'package:get/get.dart';
 import 'package:real_state_mangament/views/details/offer_details.dart';
 import 'package:real_state_mangament/views/search/Op-search.dart';
 import 'package:real_state_mangament/views/search/Search.dart';
+import 'package:real_state_mangament/google-map/Google-map.dart';
 
 List<GetPage<dynamic>>? routes = [
-  GetPage(name: '/', page: () => const OnBoarding(), middlewares: [
+  GetPage(name: '/', page: () => const Register(), middlewares: [
     OnBoardingMiddleWare(),
   ]),
   //GetPage(name: Setting_page.routeName, page: () => const Setting_page()),
@@ -25,6 +26,8 @@ List<GetPage<dynamic>>? routes = [
     AuthUntecatedMiddleware(),
   ]),
   GetPage(name: Register.routeName, page: () => const Register()),
+  // GetPage(name: Map.routeName, page: () => const Map()),
+
   GetPage(
       name: CompletedProfile.routeName, page: () => const CompletedProfile()),
   GetPage(name: LogginSuccess.routeName, page: () => const LogginSuccess()),

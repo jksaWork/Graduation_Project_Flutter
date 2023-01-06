@@ -1,6 +1,8 @@
 import 'package:real_state_mangament/controllers/auth/login_controller.dart';
 import 'package:real_state_mangament/core/Constrant/AppSvgImg.dart';
 import 'package:real_state_mangament/core/Functions/vaidate_input.dart';
+import 'package:real_state_mangament/core/Services/api.dart';
+import 'package:real_state_mangament/data/Models/Client.dart';
 import 'package:real_state_mangament/views/auth/login_success.dart';
 import 'package:real_state_mangament/views/auth/widgets/contiue_button.dart';
 import 'package:real_state_mangament/views/auth/widgets/custom_form_filed.dart';
@@ -28,13 +30,13 @@ class LoginFrom extends StatelessWidget {
             children: [
               CustomTextFiled(
                 validator: (val) => validInput(val!, 8, 30, 'Email'),
-                title: 'Emial',
+                title: 'الايميل',
                 prefiexIcon: AppSvgImg.mail,
                 controller: controller.email,
               ),
               CustomTextFiled(
                   validator: (val) => validInput(val!, 6, 30, 'Password'),
-                  title: 'Password',
+                  title: 'كلمة المرور',
                   prefiexIcon: AppSvgImg.Lock,
                   controller: controller.password),
               ForgetPasswordWidget(),

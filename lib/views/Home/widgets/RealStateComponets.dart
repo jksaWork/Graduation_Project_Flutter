@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:get/utils.dart';
 import 'package:get/get.dart';
 import 'package:real_state_mangament/core/Constrant/AppSvgImg.dart';
+import 'package:real_state_mangament/core/Services/api.dart';
 import 'package:real_state_mangament/data/Models/RealState.dart';
 import 'package:real_state_mangament/views/details/offer_details.dart';
 import 'package:transparent_image/transparent_image.dart';
+import 'package:favorite_button/favorite_button.dart';
 
 class RealStateComponent extends StatelessWidget {
   final RealState state;
@@ -94,9 +96,17 @@ class RealStateComponent extends StatelessWidget {
                   Container(
                     width: 50,
                     child: Center(
-                      child: state.isFavorate == null
-                          ? AppSvgImg.heart2
-                          : AppSvgImg.heart,
+                      child: FavoriteButton(
+                        iconSize: 50.0,
+                        isFavorite: true,
+                        // iconDisabledColor: Colors.white,
+                        valueChanged: (_isFavorite) async {
+                          await Api.toggelFavorate(1);
+                        },
+                      ),
+                      // child: state.isFavorate == null
+                      //     ? AppSvgImg.heart2
+                      //     : AppSvgImg.heart,
                     ),
                   ),
                 ],

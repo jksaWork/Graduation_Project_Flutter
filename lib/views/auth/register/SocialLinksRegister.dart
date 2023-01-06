@@ -1,11 +1,12 @@
 import 'package:real_state_mangament/core/Constrant/AppColors.dart';
 import 'package:real_state_mangament/core/Constrant/AppSvgImg.dart';
+import 'package:real_state_mangament/views/auth/login/login.dart';
 import 'package:real_state_mangament/views/auth/register/register.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class SocialLinks extends StatelessWidget {
-  const SocialLinks({Key? key}) : super(key: key);
+class SocialLinksRegister extends StatelessWidget {
+  const SocialLinksRegister({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -36,22 +37,23 @@ class SocialLinks extends StatelessWidget {
               ],
             ),
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text('اذا لم يكن لديك حساب'),
-              TextButton(
-                  onPressed: () {
-                    Get.toNamed(Register.routeName);
-                  },
-                  child: Text('انشاء حساب',
-                      style: TextStyle(
-                        color: AppColor.primaryColor,
-                        decoration: TextDecoration.underline,
-                        // backgroundColor: Colors.lightBlue),
-                      )))
-            ],
-          )
+          // Row(
+          //   mainAxisAlignment: MainAxisAlignment.center,
+          //   children: [
+          //     Text('اذا كان لديك حساب'),
+          //     TextButton(
+          //         onPressed: () {
+          //           Get.toNamed("/login");
+          //         },
+          //         child: Text(
+          //           'تسجيل دخول',
+          //           style: TextStyle(
+          //               color: AppColor.primaryColor,
+          //               decoration: TextDecoration.underline,
+          //               backgroundColor: Colors.lightBlue),
+          //         ))
+          //   ],
+          // )
         ],
       ),
     );

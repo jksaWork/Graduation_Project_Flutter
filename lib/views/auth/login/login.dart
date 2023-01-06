@@ -24,7 +24,7 @@ class Login extends StatelessWidget {
   Widget build(BuildContext context) {
     LoginController controller = Get.put(LoginController());
     return Scaffold(
-      appBar: BarWithNowBackArrow(context, 'Sign In'),
+      appBar: BarWithNowBackArrow(context, 'مرحبا بك'),
       body: WillPopScope(
         onWillPop: appColseAlert,
         child: Container(
@@ -53,7 +53,7 @@ class Login extends StatelessWidget {
                     ),
                   ),
                   child: AuthPageHeading(
-                      head: 'Wellcome Back',
+                      head: 'تسجيل الدخول',
                       description:
                           'is important to document a parent’s attendance using a sign-in sheet as it provides proof of'),
                 ),

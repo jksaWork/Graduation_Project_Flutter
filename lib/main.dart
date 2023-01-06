@@ -6,18 +6,22 @@ import 'package:real_state_mangament/core/Services/my_services.dart';
 import 'package:real_state_mangament/core/Translations/localizationController.dart';
 import 'package:real_state_mangament/core/Translations/translation.dart';
 import 'package:real_state_mangament/data/Source/Static/real_state_static.dart';
+import 'package:real_state_mangament/google-map/Gmap2.dart';
 import 'package:real_state_mangament/routes.dart';
+import 'package:real_state_mangament/views/Home/Home.dart';
 import 'package:real_state_mangament/views/OnBoarding/OnBoarding.dart';
 import 'package:real_state_mangament/views/auth/login/login.dart';
 import 'package:real_state_mangament/views/language/lang.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:real_state_mangament/google-map/Google-map.dart';
 
 void main() async {
   // await Settings.init(cacheProvider: SharePreferenceCache());
   WidgetsFlutterBinding.ensureInitialized();
   await initMyService();
   Api.initilzieIntercepters();
+
   runApp(const MyApp());
 }
 
@@ -30,6 +34,7 @@ class MyApp extends StatelessWidget {
     localelizationController controller = Get.put(localelizationController());
     MyServices service = Get.find();
     // print(controller.language);
+    // return Googlemap();
     return GetMaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
@@ -44,11 +49,12 @@ class MyApp extends StatelessWidget {
                   TextStyle(fontWeight: FontWeight.bold, color: Colors.black))),
       translations: MyTransaltion(),
       locale: controller.language,
-      // home: service.sharedPreferences.getBool('first_time') == null
-      //     ? const OnBoarding()
-      //     : const Login(),
+      home: service.sharedPreferences.getBool('first_time') == null
+          ? const OnBoarding()
+          : const Login(),
       // home: ChoseLanguage(),
       getPages: routes,
+      // home: Home(),
     );
   }
 }

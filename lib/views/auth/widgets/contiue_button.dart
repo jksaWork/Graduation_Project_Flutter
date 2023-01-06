@@ -18,7 +18,7 @@ class ContinueButton extends StatelessWidget {
             margin: EdgeInsets.symmetric(vertical: 30),
             padding: EdgeInsets.all(15),
             child: Text(
-              "Continue",
+              "دخول",
               style: TextStyle(color: Colors.white, fontSize: 18),
               textAlign: TextAlign.center,
             ),

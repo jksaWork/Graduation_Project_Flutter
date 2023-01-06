@@ -43,6 +43,7 @@ class LoginController extends LoginControllerAbs {
         sharedPreferences.setString(
             'client', clientToJson(clientResponse.client));
         sharedPreferences.setString('token', clientResponse.token);
+        print(clientResponse);
         Get.offAndToNamed(Home.routeName);
       } catch (err) {
         print(err);

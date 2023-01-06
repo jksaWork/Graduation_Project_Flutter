@@ -9,34 +9,35 @@ class ForgetPasswordWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     LoginController controller = Get.find();
-    return Container(
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Container(
-            child: Row(
-              children: [
-                Checkbox(
-                    value: false,
-                    onChanged: (val) {
-                      print('changed');
-                    }),
-                Text('Remeber Me'),
-              ],
-            ),
-          ),
-          TextButton(
-              onPressed: () {
-                controller.goToFogetPassword();
-              },
-              child: Text(
-                "Forget Password ?",
-                style: TextStyle(
-                    decoration: TextDecoration.underline,
-                    color: AppColor.primaryColor),
-              ))
-        ],
-      ),
-    );
+    return Row();
+    // return Container(
+    //   child: Row(
+    //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    //     children: [
+    //       Container(
+    //         child: Row(
+    //           children: [
+    //             Checkbox(
+    //                 value: false,
+    //                 onChanged: (val) {
+    //                   print('changed');
+    //                 }),
+    //             Text('Remeber Me'),
+    //           ],
+    //         ),
+    //       ),
+    //       TextButton(
+    //           onPressed: () {
+    //             controller.goToFogetPassword();
+    //           },
+    //           child: Text(
+    //             "Forget Password ?",
+    //             style: TextStyle(
+    //                 decoration: TextDecoration.underline,
+    //                 color: AppColor.primaryColor),
+    //           ))
+    //     ],
+    //   ),
+    // );
   }
 }

@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_settings_screens/flutter_settings_screens.dart';
 import 'package:get/get.dart' as GET;
 import 'package:get_storage/get_storage.dart';
 
@@ -13,8 +14,8 @@ class Api {
     dio.interceptors.add(InterceptorsWrapper(
       onRequest: (request, handler) async {
         GetStorage box = GetStorage();
-        var token =
-            '1|0It4iAMsv9YU7J6p2Hm7RbTH75qLJfWYMDyFIEg5'; //await GetStorage().read('login_token');
+        var token = SharePreferenceCache();
+        // '1|0It4iAMsv9YU7J6p2Hm7RbTH75qLJfWYMDyFIEg5'; //await GetStorage().read('login_token');
         // print(token);
         Map<String, String> headers = {
           'Accept': 'application/json',
@@ -69,6 +70,10 @@ class Api {
     return dio.post('/api/client/login', data: loginData);
   }
 
+  static Future<Response> Register({required Map loginData}) async {
+    return dio.post('/api/client/register', data: loginData);
+  }
+
   static Future<Response> FetchOffer({int? service = 1, int page = 1}) async {
     return dio.get('/api/client/offers',
         queryParameters: {'service': service, 'page': page});
@@ -80,5 +85,9 @@ class Api {
 
   static Future<Response> fetchFavorate() async {
     return dio.get('/api/client/offers/favorate-list');
+  }
+
+  static Future<Response> toggelFavorate(int id) async {
+    return dio.get('/api/client/offers/favorate/' + '$id');
   }
 }
