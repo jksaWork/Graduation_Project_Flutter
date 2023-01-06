@@ -6,7 +6,7 @@ import 'package:real_state_mangament/core/Constrant/AppSvgImg.dart';
 import '../controllers/maps/google_map_controller.dart';
 
 class MapsScreen extends StatelessWidget {
-  static String routeName = 'MapsScreen';
+  static String routeName = '/MapsScreen';
   const MapsScreen({Key? key}) : super(key: key);
 
   @override

@@ -27,6 +27,7 @@ class Search extends StatelessWidget {
   Widget build(BuildContext context) {
     var size;
     var controller = Get.put(SearchController());
+
     // areas = controller.areas;
     // TextEditingController controller = TextEditingController();
     return Scaffold(
@@ -49,6 +50,9 @@ class Search extends StatelessWidget {
                         height: 10,
                       ),
                       CustomTextFiled(
+                        valueChanged: (val) {
+                          print(val);
+                        },
                         validator: (val) => validInput(val!, 1, 30, 'Email'),
                         title: 'عن ماذا تبحث',
                         prefiexIcon: AppSvgImg.search2,

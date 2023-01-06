@@ -41,9 +41,9 @@ class Home extends StatelessWidget {
                       child: OffersSection(),
                     ),
                     const Positioned(
-                      bottom: 10,
+                      bottom: 30,
                       // left: 200,
-                      child: CustomFloatingNav(pageid: 2),
+                      child: CustomFloatingNav(pageid: 1),
                     ),
                   ],
                 )

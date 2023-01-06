@@ -18,7 +18,7 @@ import 'package:real_state_mangament/views/search/Op-search.dart';
 import 'package:real_state_mangament/views/search/Search.dart';
 
 List<GetPage<dynamic>>? routes = [
-  GetPage(name: '/', page: () => const MapsScreen(), middlewares: [
+  GetPage(name: '/', page: () => const Home(), middlewares: [
     // OnBoardingMiddleWare(),
   ]),
   //GetPage(name: Setting_page.routeName, page: () => const Setting_page()),
@@ -34,5 +34,6 @@ List<GetPage<dynamic>>? routes = [
   GetPage(name: Home.routeName, page: () => const Home()),
   GetPage(name: OfferDetials.routeName, page: () => OfferDetials()),
   GetPage(name: Search.routeName, page: () => const Search()),
-  GetPage(name: FavoratePage.routeName, page: () => const FavoratePage())
+  GetPage(name: FavoratePage.routeName, page: () => const FavoratePage()),
+  GetPage(name: MapsScreen.routeName, page: () => const MapsScreen())
 ];
