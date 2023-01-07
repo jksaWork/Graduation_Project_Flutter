@@ -4,24 +4,20 @@ import 'package:real_state_mangament/data/Models/OnBardingModel.dart';
 
 List<OnBoardModel> onBoardingList = [
   OnBoardModel(
-      title: "Choose Product",
-      body:
-          "We Have a 100k Product , Choose \n Your Product From  Our \n E-commerce Shop",
+      title: "اعثر علي طلبك",
+      body: "سرعة في الحصول علي ما تبحث مع فرص  ",
       image: AppImageAsset.onBoardingImageOne),
   OnBoardModel(
-      title: "Easy And Safe Paymnet",
-      body:
-          "We Have a 100k Product , Choose \n Your Product From Our E-commerce Shop",
+      title: "سهولة و انسيابية الدفع",
+      body: "تعدد طرق الدفع و تافر خدمات للمستخدم",
       image: AppImageAsset.onBoardingImageTwo),
   OnBoardModel(
-      title: "Track Your Order",
-      body:
-          "We Have a 100k Product , Choose \n Your Product From Our E-commerce Shop",
+      title: "تتبع موقع طلبك",
+      body: "دقة و كفاة سرعة الوصول ",
       image: AppImageAsset.onBoardingImageThree),
   OnBoardModel(
-      title: "Track Your Order",
-      body:
-          "We Have a 100k Product , Choose \n Your Product From Our E-commerce Shop",
+      title: "امن ",
+      body: "امن و دقة موثوقية المعاملات",
       image: AppImageAsset.onBoardingImageThree)
 ];
 
