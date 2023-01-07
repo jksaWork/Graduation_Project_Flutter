@@ -45,7 +45,7 @@ class OfferDetials extends StatelessWidget {
             ),
             Positioned(
                 child: CustomAppBarProductDetails(
-                    context, controllerdetails.offer.price))
+                    context, controllerdetails.offer.favorateConunt))
           ],
         ),
       ),

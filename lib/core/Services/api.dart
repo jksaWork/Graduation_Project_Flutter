@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_settings_screens/flutter_settings_screens.dart';
 import 'package:get/get.dart' as GET;
 import 'package:get_storage/get_storage.dart';
+import 'package:real_state_mangament/views/search/widgets/search_offers_item.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class Api {
   static final dio = Dio(BaseOptions(
@@ -10,11 +12,13 @@ class Api {
     receiveDataWhenStatusError: true,
   ));
 
-  static void initilzieIntercepters() {
+  static void initilzieIntercepters() async {
+    SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
     dio.interceptors.add(InterceptorsWrapper(
       onRequest: (request, handler) async {
+        String? token = sharedPreferences.getString('token');
         GetStorage box = GetStorage();
-        var token = SharePreferenceCache();
+        // var token = SharePreferenceCache();
         // '1|0It4iAMsv9YU7J6p2Hm7RbTH75qLJfWYMDyFIEg5'; //await GetStorage().read('login_token');
         // print(token);
         Map<String, String> headers = {
@@ -37,10 +41,10 @@ class Api {
         }
 
         GET.Get.snackbar(
-          'error'.tr,
-          '${error.message}',
+          "خطا ",
+          'يرجي اعاده المحاوله',
           snackPosition: GET.SnackPosition.BOTTOM,
-          backgroundColor: Colors.red,
+          backgroundColor: Colors.black26,
           colorText: Colors.white,
         );
 
@@ -74,13 +78,20 @@ class Api {
     return dio.post('/api/client/register', data: loginData);
   }
 
-  static Future<Response> FetchOffer({int? service = 1, int page = 1}) async {
+  static Future<Response> FetchOffer(
+      {required int service, int page = 1}) async {
     return dio.get('/api/client/offers',
         queryParameters: {'service': service, 'page': page});
   }
 
   static Future<Response> fetchAreas() async {
     return dio.get('/api/areas');
+  }
+
+  static Future<Response> SearchOffer(
+      {required String value, int? areaId}) async {
+    return dio.get('/api/client/offers/Search',
+        queryParameters: {'search': value, 'area_id': areaId});
   }
 
   static Future<Response> fetchFavorate() async {

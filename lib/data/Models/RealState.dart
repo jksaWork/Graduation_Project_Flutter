@@ -5,6 +5,7 @@
 import 'dart:convert';
 import 'dart:ffi';
 
+import 'package:real_state_mangament/controllers/favorate_controller.dart';
 import 'package:real_state_mangament/data/Models/Area.dart';
 import 'package:real_state_mangament/data/Models/Image.dart';
 
@@ -38,6 +39,7 @@ class RealState {
     required this.service,
     this.agent,
     required this.images,
+    required this.favorateConunt,
   });
 
   final int id;
@@ -64,6 +66,7 @@ class RealState {
   final dynamic agent;
   final List<Image> images;
   final isFavorate;
+  final int favorateConunt;
 
   factory RealState.fromJson(Map<String, dynamic> json) => RealState(
         id: json["id"],
@@ -81,14 +84,15 @@ class RealState {
         status: json["status"],
         location: json["location"],
         isAvaliable: json["is_avaliable"],
-        isFavorate: json['is_avaliable'],
+        isFavorate: json['is_favorate'],
         area: Area.fromJson(json["area"]),
         owner: json["owner"],
         client: json["client"],
         type: Area.fromJson(json["type"]),
         service: Area.fromJson(json["service"]),
         agent: json["agent"],
-        price: json['is_avaliable'],
+        price: json['price'],
+        favorateConunt: json['favorate_count'] ?? 0,
         images: List<Image>.from(json["images"].map((x) => Image.fromJson(x))),
       );
 
@@ -114,6 +118,7 @@ class RealState {
         "type": type.toJson(),
         "service": service.toJson(),
         "agent": agent,
+        "price": price,
         "images": List<dynamic>.from(images.map((x) => x.toJson())),
       };
 }

@@ -37,7 +37,7 @@ class Home extends StatelessWidget {
                     Container(
                       width: double.infinity,
                       // color: AppColor.primaryColor,
-                      height: MediaQuery.of(context).size.height * .80 - 24,
+                      height: MediaQuery.of(context).size.height * .80 - 27,
                       child: OffersSection(),
                     ),
                     const Positioned(

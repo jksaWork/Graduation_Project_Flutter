@@ -6,6 +6,7 @@ import 'package:real_state_mangament/data/Source/Static/areas_static.dart';
 RealState one = RealState(
   price: 255,
   isFavorate: true,
+  favorateConunt: 3,
   areaId: 1,
   area: areaone,
   images: [
@@ -35,6 +36,7 @@ RealState one = RealState(
 RealState there = RealState(
   price: 255,
   areaId: 1,
+  favorateConunt: 3,
   area: areaone,
   images: [
     Image(
@@ -78,6 +80,7 @@ RealState tow = RealState(
   mainImage:
       'https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=600',
   shortDesc: "Hello From Here ",
+  favorateConunt: 3,
   longDesc: 'Hello Form There ',
   service: areaone,
   type: areaone,

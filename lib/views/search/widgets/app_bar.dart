@@ -4,6 +4,7 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 import 'package:real_state_mangament/core/Constrant/AppColors.dart';
+import 'package:real_state_mangament/views/Favorate/favaorate_page.dart';
 
 class SerachAppBar extends StatelessWidget {
   const SerachAppBar({Key? key}) : super(key: key);
@@ -38,9 +39,9 @@ AppBar SearchAppBarONe({String? title = null}) {
       IconButton(
         iconSize: 20,
         color: Colors.white,
-        onPressed: () {},
+        onPressed: () => Get.toNamed(FavoratePage.routeName),
         icon: Icon(
-          Icons.filter_list,
+          Icons.favorite,
         ),
       ),
     ],

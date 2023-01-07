@@ -8,8 +8,8 @@ import 'package:real_state_mangament/data/Source/Static/real_state_static.dart';
 class FavorateController extends GetxController {
 // final MyRepository repository;
 // MyController(this.repository);
-  RxBool isLoaading = false.obs;
-  RxList realStates = [...StaticRealState].obs;
+  RxBool isLoaading = true.obs;
+  RxList realStates = [].obs;
   // On In Decator Tap
   onTap(int value) {
     isLoaading.value = true;
@@ -28,19 +28,13 @@ class FavorateController extends GetxController {
     print(realStates.toString());
     isLoaading.value = false;
     update();
-    // } catch (error) {
-    //   print(
-    //       '-----favorate Error ------------errro happend ------------------------');
-    //   print(error);
-    //   isLoaading.value = false;
-    //   update();
-    // }
+    update();
   }
 
   @override
   void onInit() {
-    // Jksa Altigani Osman
     fetchOffers();
+    update();
     super.onInit();
   }
 }

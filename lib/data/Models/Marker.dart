@@ -32,7 +32,7 @@ class GMarker {
         lat: json["lat"],
         long: json["long"],
         id: 1,
-        realstate: one,
+        realstate: RealState.fromJson(json),
         // Toogle with thid code  realstate: Realstatus.fromJson(json["realstate"]),
         location: json["location"],
         mainImage: json["main_image"],

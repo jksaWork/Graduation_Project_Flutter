@@ -12,6 +12,7 @@ class OfferDetailsDescription extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    offer;
     return Container(
       // padding: EdgeInsets.all(10),
       width: double.infinity,
@@ -29,7 +30,7 @@ class OfferDetailsDescription extends StatelessWidget {
           children: [
             Text(offer.title, style: Theme.of(context).textTheme.headline6),
             Container(
-              width: 60,
+              width: 90,
               child: Row(
                 children: [
                   Text('${offer.price}',

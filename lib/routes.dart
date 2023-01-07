@@ -19,12 +19,12 @@ import 'package:real_state_mangament/views/search/Search.dart';
 import 'package:real_state_mangament/google-map/Google-map.dart';
 
 List<GetPage<dynamic>>? routes = [
-  GetPage(name: '/', page: () => const Register(), middlewares: [
-    OnBoardingMiddleWare(),
+  GetPage(name: '/', page: () => const OnBoarding(), middlewares: [
+    // OnBoardingMiddleWare(),
   ]),
   //GetPage(name: Setting_page.routeName, page: () => const Setting_page()),
   GetPage(name: Login.routeName, page: () => const Login(), middlewares: [
-    AuthUntecatedMiddleware(),
+    // AuthUntecatedMiddleware(),
     // OnBoardingMiddleWare(),
   ]),
   GetPage(name: Register.routeName, page: () => const Register()),

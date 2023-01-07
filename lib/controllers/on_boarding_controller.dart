@@ -25,7 +25,7 @@ class onBoardingController extends onBoardingAbs {
     // print('go to next Fun');
     if (currentIndex + 1 == OnBoardingLength) {
       service.sharedPreferences.setBool('first_time', true);
-      Get.offAllNamed(Home.routeName);
+      Get.to(Login());
     }
     currentIndex++;
     pageController.animateToPage(currentIndex,

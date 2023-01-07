@@ -17,8 +17,8 @@ abstract class LoginControllerAbs extends GetxController {
 }
 
 class LoginController extends LoginControllerAbs {
-  late TextEditingController email;
-  late TextEditingController password;
+  TextEditingController email = TextEditingController();
+  TextEditingController password = TextEditingController();
   late Client user;
   final box = GetStorage();
   late SharedPreferences sharedPreferences;
@@ -64,12 +64,9 @@ class LoginController extends LoginControllerAbs {
   void onInit() async {
     // TODO: implement onInit
     sharedPreferences = await SharedPreferences.getInstance();
-    // print(sharedPreferences.getInt('hello'));
-    print('------------');
 
-    print(box.read("login_token"));
-    email = TextEditingController();
-    password = TextEditingController();
+    // email = ();
+    // password = TextEditingController();
     email.text = 'jksa@altigani.com1';
     password.text = '123456';
     super.onInit();

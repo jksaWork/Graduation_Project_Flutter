@@ -49,9 +49,7 @@ class MyApp extends StatelessWidget {
                   TextStyle(fontWeight: FontWeight.bold, color: Colors.black))),
       translations: MyTransaltion(),
       locale: controller.language,
-      home: service.sharedPreferences.getBool('first_time') == null
-          ? const OnBoarding()
-          : const Login(),
+      home: OnBoarding(),
       // home: ChoseLanguage(),
       getPages: routes,
       // home: Home(),

@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/utils.dart';
 import 'package:get/get.dart';
+import 'package:real_state_mangament/core/Constrant/AppColors.dart';
 import 'package:real_state_mangament/core/Constrant/AppSvgImg.dart';
 import 'package:real_state_mangament/core/Services/api.dart';
 import 'package:real_state_mangament/data/Models/RealState.dart';
 import 'package:real_state_mangament/views/details/offer_details.dart';
 import 'package:transparent_image/transparent_image.dart';
 import 'package:favorite_button/favorite_button.dart';
+import 'package:get/get.dart' as GET;
 
 class RealStateComponent extends StatelessWidget {
   final RealState state;
@@ -97,11 +99,32 @@ class RealStateComponent extends StatelessWidget {
                     width: 50,
                     child: Center(
                       child: FavoriteButton(
-                        iconSize: 50.0,
-                        isFavorite: true,
+                        iconSize: 40.0,
+                        isFavorite: state.isFavorate == 0 ? false : true,
                         // iconDisabledColor: Colors.white,
                         valueChanged: (_isFavorite) async {
-                          await Api.toggelFavorate(1);
+                          try {
+                            var repsone = await Api.toggelFavorate(state.id);
+                            // var messge = 'jksa';
+                            if (_isFavorite == true) {
+                              GET.Get.snackbar(
+                                ' نجاح',
+                                "تم اضافه العرض للمفضله",
+                                snackPosition: GET.SnackPosition.BOTTOM,
+                                backgroundColor:
+                                    AppColor.secondColor.withOpacity(.3),
+                                colorText: Colors.white,
+                              );
+                            }
+                          } catch (e) {
+                            // GET.Get.snackbar(
+                            //   "خطا ",
+                            //   'يرجي اعاده المحاوله',
+                            //   snackPosition: GET.SnackPosition.BOTTOM,
+                            //   backgroundColor: Colors.black26,
+                            //   colorText: Colors.white,
+                            // );
+                          }
                         },
                       ),
                       // child: state.isFavorate == null

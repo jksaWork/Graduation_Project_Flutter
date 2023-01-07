@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:get/instance_manager.dart';
 import 'package:real_state_mangament/core/Constrant/AppColors.dart';
 import 'package:real_state_mangament/data/Models/RealState.dart';
+import 'package:real_state_mangament/views/details/offer_details.dart';
 import 'package:transparent_image/transparent_image.dart';
+import 'package:get/get.dart';
 
 class SearchOffersItem extends StatelessWidget {
   final RealState offer;
@@ -15,50 +18,56 @@ class SearchOffersItem extends StatelessWidget {
       ),
       // clipBehavior: Clip,
       clipBehavior: Clip.antiAlias,
-      child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 7),
-        child: Row(
-          children: [
-            SmallRealStateImage(image: offer.mainImage),
-            SizedBox(width: 10),
-            Container(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    offer.title,
-                    style: TextStyle(fontWeight: FontWeight.bold),
-                  ),
-                  Container(
-                    margin: EdgeInsets.all(0),
-                    padding: EdgeInsets.all(0),
-                    child: Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Icon(
-                            Icons.room_outlined,
-                            size: 20,
-                          ),
-                          SizedBox(width: 10),
-                          Text(offer.location),
-                          SizedBox(width: 10),
-                        ]),
-                  ),
-                  SizedBox(
-                    width: MediaQuery.of(context).size.width * .52,
-                    child: Text(
-                      'تقع الخرطوم في منتصف المساحة المأهولة وسط السودان تقريبا -أقرب إلى الشرق- بين خطي العرض',
-                      style: TextStyle(color: AppColor.grey, fontSize: 13),
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
+      child: GestureDetector(
+        onTap: () {
+          Get.toNamed(OfferDetials.routeName,
+              parameters: {'offer': realStateToJson(offer)});
+        },
+        child: Container(
+          padding: EdgeInsets.symmetric(horizontal: 7),
+          child: Row(
+            children: [
+              SmallRealStateImage(image: offer.mainImage),
+              SizedBox(width: 10),
+              Container(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      offer.title,
+                      style: TextStyle(fontWeight: FontWeight.bold),
                     ),
-                  ),
-                ],
+                    Container(
+                      margin: EdgeInsets.all(0),
+                      padding: EdgeInsets.all(0),
+                      child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Icon(
+                              Icons.room_outlined,
+                              size: 20,
+                            ),
+                            SizedBox(width: 10),
+                            Text(offer.location),
+                            SizedBox(width: 10),
+                          ]),
+                    ),
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width * .52,
+                      child: Text(
+                        offer.shortDesc,
+                        style: TextStyle(color: AppColor.grey, fontSize: 13),
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    ),
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
